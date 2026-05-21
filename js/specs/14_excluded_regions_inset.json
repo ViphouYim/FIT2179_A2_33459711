@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 140,
+  "title": "Excluded regions (not in analysis)",
+  "data": {
+    "url": "data/sa2_2021_excluded_regions.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [135, -24],
+    "scale": 240
+  },
+  "mark": {
+    "type": "geoshape",
+    "fill": "#efe6d8",
+    "stroke": "#cbbca7",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "tooltip": [
+      { "field": "properties.SA2_NAME21", "title": "Region" },
+      { "field": "properties.STE_NAME21", "title": "Group" }
+    ]
+  },
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": "#d7cabc",
+      "fill": "transparent"
+    },
+    "title": {
+      "font": "Inter",
+      "fontSize": 12,
+      "anchor": "start",
+      "color": "#6b5f55"
+    }
+  }
+}

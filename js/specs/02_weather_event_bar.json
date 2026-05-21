@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 250,
+  "data": {
+    "url": "data/section01_health_aihw_from_workbook.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.chart_group == 'Weather event totals'"
+    },
+    {
+      "calculate": "toNumber(datum.hospitalisations)",
+      "as": "hosp"
+    },
+    {
+      "calculate": "datum.weather_event + ' — ' + format(datum.hosp, ',d')",
+      "as": "bar_label"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "hosp",
+      "type": "quantitative",
+      "title": "Hospitalisations",
+      "scale": { "domain": [0, 8600] }
+    },
+    "y": {
+      "field": "weather_event",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4
+      },
+      "encoding": {
+        "color": {
+          "field": "weather_event",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Heat",
+              "Bushfire",
+              "Cold",
+              "Rain and storms"
+            ],
+            "range": [
+              "#c2410c",
+              "#92400e",
+              "#2563eb",
+              "#64748b"
+            ]
+          }
+        },
+        "tooltip": [
+          "weather_event",
+          {
+            "field": "hosp",
+            "format": ",d",
+            "title": "Hospitalisations"
+          },
+          {
+            "field": "deaths",
+            "format": ",d"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#111827"
+      },
+      "encoding": {
+        "text": {
+          "field": "bar_label"
+        }
+      }
+    }
+  ],
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#4b5563",
+      "titleColor": "#111827",
+      "gridColor": "#e8e1d7",
+      "tickColor": "#d6cbbd"
+    },
+    "legend": {
+      "labelColor": "#374151",
+      "titleColor": "#111827"
+    }
+  }
+}

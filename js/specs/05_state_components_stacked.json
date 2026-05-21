@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 320,
+  "title": "Average risk components by state/territory",
+  "data": {
+    "url": "data/state_components_long.csv"
+  },
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "x": {
+      "field": "state_name",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 10
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Average index value",
+      "stack": "normalize"
+    },
+    "color": {
+      "field": "component",
+      "type": "nominal",
+      "title": "Component",
+      "scale": {
+        "scheme": "redyellowblue"
+      },
+      "legend": {
+        "orient": "bottom",
+        "labelLimit": 0
+      }
+    },
+    "tooltip": [
+      "state_name",
+      "component",
+      {
+        "field": "value",
+        "format": ".3f"
+      }
+    ]
+  },
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#4b5563",
+      "titleColor": "#111827",
+      "gridColor": "#e8e1d7",
+      "tickColor": "#d6cbbd"
+    },
+    "legend": {
+      "labelColor": "#374151",
+      "titleColor": "#111827"
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 18,
+      "anchor": "start",
+      "color": "#111827"
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 370,
+  "title": "Highest-risk SA2s",
+  "data": {
+    "url": "data/top10_hhri.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#d7cabc",
+        "strokeWidth": 4,
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "hhri",
+          "type": "quantitative",
+          "title": "HHRI",
+          "scale": {
+            "domain": [0.95, 1]
+          }
+        },
+        "y": {
+          "field": "region_name",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "labelLimit": 260,
+            "labelPadding": 6
+          }
+        },
+        "x2": {
+          "value": 0.95
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 140
+      },
+      "encoding": {
+        "x": {
+          "field": "hhri",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0.95, 1]
+          }
+        },
+        "y": {
+          "field": "region_name",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "color": {
+          "field": "state_name",
+          "type": "nominal",
+          "title": "State",
+          "legend": {
+            "orient": "bottom"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "region_name",
+            "title": "SA2"
+          },
+          {
+            "field": "state_name",
+            "title": "State"
+          },
+          {
+            "field": "hhri",
+            "title": "HHRI",
+            "format": ".3f"
+          },
+          {
+            "field": "exposure_index",
+            "title": "Heat exposure",
+            "format": ".3f"
+          },
+          {
+            "field": "housing_index",
+            "title": "Housing condition",
+            "format": ".3f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 10,
+        "fontWeight": 700,
+        "color": "#5b4638"
+      },
+      "encoding": {
+        "x": {
+          "field": "hhri",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "region_name",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "text": {
+          "field": "hhri",
+          "type": "quantitative",
+          "format": ".3f"
+        }
+      }
+    }
+  ],
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#4b5563",
+      "titleColor": "#111827",
+      "gridColor": "#e8e1d7",
+      "tickColor": "#d6cbbd"
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 18,
+      "anchor": "start",
+      "color": "#111827"
+    }
+  }
+}

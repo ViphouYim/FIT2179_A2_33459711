@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Too Hot to Handle — Heat, Housing and Health Risk Across Australia</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero panel">
+      <div class="hero-title">
+        <p class="eyebrow">FIT2179 Data Visualisation 2</p>
+        <h1><span class="title-primary">Too Hot</span> <span class="title-secondary">to Handle</span></h1>
+        <h2 class="hero-subtitle">Mapping Heat, Housing and Health Risk Across Australia</h2>
+      </div>
+      <div class="hero-text">
+        <p class="hero-lead">Extreme heat is not only a weather problem.</p>
+        <p>Across Australia, heat-health risk rises where high exposure overlaps with housing pressure, poorer health status, older populations and socioeconomic vulnerability.</p>
+      </div>
+      <div class="hero-metrics">
+        <div class="stat-card">
+          <span class="stat-kicker">MAPPED REGIONS</span>
+          <span class="stat-number">2,473</span>
+          <span class="stat-label">SA2 regions across Australia</span>
+        </div>
+        <div class="stat-card accent">
+          <span class="stat-kicker">HEAT HOSPITALISATIONS</span>
+          <span class="stat-number">7,104</span>
+          <span class="stat-label">injury hospitalisations linked to extreme heat</span>
+        </div>
+        <div class="stat-card risk">
+          <span class="stat-kicker">HHRI SCALE</span>
+          <span class="stat-number">0-1</span>
+          <span class="stat-label">Heat-Health Risk Index range used for mapped scores</span>
+        </div>
+        <div class="hero-mini">
+          <p class="mini-kicker">HEAT RISK IS BUILT FROM</p>
+          <div class="mini-components" aria-label="Heat risk component summary">
+            <span class="mini-chip">Exposure</span>
+            <span class="mini-chip">Housing</span>
+            <span class="mini-chip">Health</span>
+            <span class="mini-chip">Vulnerability</span>
+            <span class="mini-chip">Adaptive Capacity</span>
+          </div>
+        </div>
+      </div>
+      <p class="hero-source">Data: ACS/ABS Heat-Health Risk Index, ABS SEIFA, ABS Regional Population, AIHW extreme weather injury data and ABS SA2 boundaries.</p>
+    </header>
+
+    <section class="section-title">
+      <span>01</span><h2>Why heat-health risk matters</h2>
+      <p>The national data shows why heat matters before the story moves into regional risk.</p>
+    </section>
+    <section class="grid section01-grid">
+      <article class="panel chart-card section01-bar">
+        <div class="chart-heading">
+          <p class="chart-kicker">National burden</p>
+          <h3>Heat causes the largest injury burden</h3>
+          <p>Direct labels show heat dominates all listed weather hazards.</p>
+        </div>
+        <p class="chart-description">Extreme heat accounts for far more weather-related injury hospitalisations than bushfires, cold, rain or storms.</p>
+        <div id="weather_event_bar" class="chart"></div>
+        <p class="chart-note">Takeaway: Heat is the clearest starting point for understanding weather-related health risk in Australia.</p>
+      </article>
+      <article class="panel chart-card section01-line">
+        <div class="chart-heading">
+          <p class="chart-kicker">Time pattern</p>
+          <h3>Weather injuries return year after year</h3>
+          <p>Peak years are labelled to highlight the main trend quickly.</p>
+        </div>
+        <p class="chart-description">Hospitalisations fluctuate across the decade, with several years passing 1,000 recorded cases.</p>
+        <div id="yearly_line" class="chart"></div>
+        <p class="chart-note">Takeaway: Extreme weather injury is not a one-off problem; it is a recurring pressure on health systems.</p>
+      </article>
+      <article class="panel chart-card section01-donut">
+        <div class="chart-heading">
+          <p class="chart-kicker">Proportion</p>
+          <h3>Heat dominates the burden</h3>
+          <p>A circular view reinforces how much of the injury burden is heat-related.</p>
+        </div>
+        <p class="chart-description">Most recorded extreme weather injury hospitalisations were linked to heat.</p>
+        <div id="heat_share_donut" class="chart"></div>
+        <p class="chart-note">Takeaway: This explains why the rest of the report focuses on heat-health risk.</p>
+      </article>
+    </section>
+
+    <section class="section-title">
+      <span>02</span><h2>Where the risk is concentrated</h2>
+      <p>Heat-health risk is uneven across Australia. The map reveals where exposure, vulnerability and adaptive capacity combine into higher local risk.</p>
+    </section>
+    <section class="grid feature-map">
+      <article class="panel chart-card map-card">
+        <div class="chart-heading">
+          <p class="chart-kicker">Spatial pattern</p>
+          <h3>Heat-health risk is not evenly spread</h3>
+          <p>Hover each SA2 to inspect local risk conditions and compare overall HHRI scores across regions.</p>
+        </div>
+        <p class="chart-description">The SA2 map shows the overall Heat-Health Risk Index, where darker areas have higher relative risk.</p>
+        <div id="map_hhri" class="chart map-chart"></div>
+        <p class="chart-note">Takeaway: The map should not be read as temperature alone. It combines heat exposure with social, housing, health and adaptive-capacity factors.</p>
+      </article>
+      <aside class="panel explainer-card">
+        <h3>How to read this map</h3>
+        <p>Darker SA2s have higher relative heat-health risk. The score combines heat exposure, social and housing vulnerability, health status and adaptive capacity, so it should not be read as temperature alone.</p>
+        <ul>
+          <li>Exposure: local heat and environmental pressure</li>
+          <li>Vulnerability: housing, health and social disadvantage</li>
+          <li>Adaptive capacity: support access and local resilience</li>
+        </ul>
+        <div id="excluded_regions_map" class="chart mini-map"></div>
+        <p><strong>Use this as a guide:</strong> first scan for high-risk clusters, then hover to identify which component is driving risk in each SA2.</p>
+      </aside>
+    </section>
+
+    <section class="grid two-col">
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Hotspot ranking</p><h3>The highest-risk places are often regional</h3><p>A ranked list makes the map easier to interpret.</p></div><p class="chart-description">Ranking the top SA2s helps identify the places with the highest combined heat-health risk.</p><div id="top10_hhri" class="chart"></div><p class="chart-note">Takeaway: Heat-health risk is not limited to major cities; regional and remote areas also appear among the highest-risk places.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">State comparison</p><h3>Risk levels make the map easier to read</h3><p>100% stacked bars show which states hold more SA2s in each risk band.</p></div><p class="chart-description">Quintiles divide SA2s into five comparable risk groups from lowest to highest.</p><div id="histogram_hhri" class="chart"></div><p class="chart-note">Takeaway: The categories make the 0–1 index easier to interpret for a general audience.</p></article>
+    </section>
+
+    <section class="section-title">
+      <span>03</span><h2>What drives risk?</h2>
+      <p>Risk is highest where multiple pressures overlap. These charts separate the index into exposure, housing, health and social vulnerability.</p>
+    </section>
+    <section class="grid two-col">
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Driver overlap</p><h3>High exposure becomes more serious when vulnerability is also high</h3><p>Use the dropdown to filter by state.</p></div><p class="chart-description">This chart compares heat exposure with social vulnerability across SA2s.</p><div id="scatter_exposure_vulnerability" class="chart"></div><p class="chart-note">Takeaway: The most concerning regions sit where both exposure and vulnerability are high.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Dual pressure</p><h3>Housing and health risks can overlap</h3><p>Housing condition risk and health status risk are compared directly.</p></div><p class="chart-description">This chart compares housing condition risk with health status risk.</p><div id="scatter_housing_health" class="chart"></div><p class="chart-note">Takeaway: Heat-health risk becomes more serious when poorer housing conditions coincide with poorer health status.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Population structure</p><h3>Older communities add another layer of risk</h3><p>Bubble size represents population.</p></div><p class="chart-description">Older residents are more vulnerable to heat stress, especially in areas with high exposure.</p><div id="bubble_older_heat" class="chart"></div><p class="chart-note">Takeaway: Age vulnerability is spatially uneven, so local population structure matters.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Social pattern</p><h3>Disadvantage helps explain uneven risk</h3><p>Lower SEIFA scores indicate greater disadvantage.</p></div><p class="chart-description">Lower SEIFA IRSD scores indicate greater socioeconomic disadvantage.</p><div id="scatter_seifa_hhri" class="chart"></div><p class="chart-note">Takeaway: Heat-health risk is shaped by social conditions, not only by climate conditions.</p></article>
+    </section>
+
+    <section class="section-title">
+      <span>04</span><h2>Comparing places</h2>
+      <p>State summaries reveal broad patterns, while the SA2 map shows local variation.</p>
+    </section>
+    <section class="grid two-col">
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Component mix</p><h3>Risk is built from different combinations of factors</h3><p>Normalised bars show the average mix of risk components.</p></div><p class="chart-description">State averages show how exposure, housing, health, vulnerability and adaptive capacity contribute to heat-health risk.</p><div id="state_components" class="chart"></div><p class="chart-note">Takeaway: No single factor explains risk everywhere; different states show different risk profiles.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Within-state variation</p><h3>States contain different local risk patterns</h3><p>Box plots show within-state variation across SA2s.</p></div><p class="chart-description">The box plot shows how much heat-health risk varies between SA2s within each state or territory.</p><div id="boxplot_state" class="chart"></div><p class="chart-note">Takeaway: A state can contain both low-risk and high-risk SA2s, so local mapping remains important.</p></article>
+    </section>
+
+    <section class="section-title">
+      <span>05</span><h2>Final focus: the highest-risk areas</h2>
+      <p>The final focus returns to the highest-risk SA2s and shows which risk components drive their scores.</p>
+    </section>
+    <section class="grid section05-layout">
+      <article class="panel chart-card section05-chart-card"><div class="chart-heading"><p class="chart-kicker">Final synthesis</p><h3>The highest-risk SA2s share multiple risk drivers</h3><p>This heatmap shows which risk components contribute most strongly in the top-ranked areas.</p></div><div id="heatmap_top_components" class="chart"></div><p class="chart-note">Takeaway: Priority areas are not high-risk for one reason alone. Most combine high exposure with vulnerability, housing or health pressures.</p></article>
+      <aside class="panel section05-side-text">
+        <h3>How to read this chart</h3>
+        <p>Darker cells indicate higher component scores. Compare each row to see how risk composition changes across the top 10 SA2s.</p>
+        <p>Most high-risk areas do not score high on every component. Instead, each region shows a different mix of exposure, housing, health, vulnerability, and adaptive capacity.</p>
+        <p><strong>Why this matters:</strong> targeted local responses work better than a single nationwide solution.</p>
+      </aside>
+    </section>
+
+    <article class="panel narrative-text conclusion">
+      <h3>What this means</h3>
+      <p>Heat-health risk is not simply a map of hot places. The highest-risk SA2s are places where heat exposure combines with social vulnerability, housing condition risk, health status risk and limited adaptive capacity. Mapping these factors together makes the risk easier to see, compare and act on.</p>
+    </article>
+    <article class="panel narrative-text metadata-panel">
+      <h3>Domain, Audience, and Method</h3>
+      <p><strong>Domain:</strong> climate-related heat-health risk in Australian SA2 regions.</p>
+      <p><strong>Who:</strong> public health planners, local councils, emergency managers, and policy audiences.</p>
+      <p><strong>What:</strong> a multi-chart dashboard integrating national burden, spatial risk, drivers, and top-risk profiles.</p>
+      <p><strong>Why:</strong> to identify where heat-health risk is highest and which factors should be targeted first.</p>
+      <p><strong>How:</strong> ACS/ABS HHRI data joined to SA2 geography, analysed with comparative and multivariate Vega-Lite views.</p>
+    </article>
+    <footer class="panel footer-panel">
+      <p><strong>Author:</strong> Viphou Yim (33459711) · <strong>Unit:</strong> FIT2179 Data Visualisation 2 · <strong>Date:</strong> May 2026 · <strong>Built with:</strong> Vega-Lite</p>
+      <p><strong>Primary sources:</strong> ACS/ABS Heat-Health Risk Index, ABS SEIFA, ABS Regional Population, AIHW Extreme Weather Injuries.</p>
+      <p><strong>AI acknowledgement:</strong> Language and layout refinement supported by GitHub Copilot (GPT-5.3-Codex); data preparation, chart logic, and final interpretation reviewed and verified by the author.</p>
+    </footer>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
