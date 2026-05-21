@@ -1,0 +1,15 @@
+chart_group,period,weather_event,hospitalisations,deaths,notes,source_url
+Weather event totals,2012-13 to 2021-22 hosp.; 2011-12 to 2020-21 deaths,Heat,7104,293.0,AIHW Table 1: extreme weather-related hospitalisations and deaths,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Weather event totals,2012-13 to 2021-22 hosp.; 2011-12 to 2020-21 deaths,Bushfire,894,65.0,AIHW Table 1: extreme weather-related hospitalisations and deaths,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Weather event totals,2012-13 to 2021-22 hosp.; 2011-12 to 2020-21 deaths,Cold,773,242.0,AIHW Table 1: extreme weather-related hospitalisations and deaths,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Weather event totals,2012-13 to 2021-22 hosp.; 2011-12 to 2020-21 deaths,Rain and storms,348,77.0,AIHW Table 1: extreme weather-related hospitalisations and deaths,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2012-13,All extreme weather,748,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2013-14,All extreme weather,1027,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2014-15,All extreme weather,807,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2015-16,All extreme weather,853,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2016-17,All extreme weather,1033,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2017-18,All extreme weather,906,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2018-19,All extreme weather,989,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2019-20,All extreme weather,1108,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2020-21,All extreme weather,894,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries
+Yearly hospitalisations,2021-22,All extreme weather,754,,AIHW Figure 4: total extreme weather-related injury hospitalisations,https://www.aihw.gov.au/reports/injury/extreme-weather-injuries

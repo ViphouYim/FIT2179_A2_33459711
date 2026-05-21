@@ -1,0 +1,81 @@
+region_code,region_name,state_name,category,indicator,value,unit,source_sheet
+105011096,Walgett - Lightning Ridge,New South Wales,Heat,Heat-Health Risk Index,0.998,index 0-1,Heat_Raw_HHRI
+105011096,Walgett - Lightning Ridge,New South Wales,Heat,Heat Exposure Index,0.937,index 0-1,Heat_Raw_HHRI
+105011096,Walgett - Lightning Ridge,New South Wales,Social,Social Vulnerability Index,0.939,index 0-1,Heat_Raw_HHRI
+105011096,Walgett - Lightning Ridge,New South Wales,Housing,Housing Condition Index,0.679,index 0-1,Heat_Raw_HHRI
+105011096,Walgett - Lightning Ridge,New South Wales,Health,Health Status Index,0.59,index 0-1,Heat_Raw_HHRI
+105011096,Walgett - Lightning Ridge,New South Wales,Adaptive Capacity,Adaptive Capacity Index,0.082,index 0-1; higher means less risk,Heat_Raw_HHRI
+105011096,Walgett - Lightning Ridge,New South Wales,Age,Population aged 65+,22.9,%,Social_Raw_AGE
+105011096,Walgett - Lightning Ridge,New South Wales,Disadvantage,IRSD score,883.0,score,SEIFA_Raw
+307011171,Balonne,Queensland,Heat,Heat-Health Risk Index,0.996,index 0-1,Heat_Raw_HHRI
+307011171,Balonne,Queensland,Heat,Heat Exposure Index,0.997,index 0-1,Heat_Raw_HHRI
+307011171,Balonne,Queensland,Social,Social Vulnerability Index,0.848,index 0-1,Heat_Raw_HHRI
+307011171,Balonne,Queensland,Housing,Housing Condition Index,0.599,index 0-1,Heat_Raw_HHRI
+307011171,Balonne,Queensland,Health,Health Status Index,0.586,index 0-1,Heat_Raw_HHRI
+307011171,Balonne,Queensland,Adaptive Capacity,Adaptive Capacity Index,0.07,index 0-1; higher means less risk,Heat_Raw_HHRI
+307011171,Balonne,Queensland,Age,Population aged 65+,17.3,%,Social_Raw_AGE
+307011171,Balonne,Queensland,Disadvantage,IRSD score,943.0,score,SEIFA_Raw
+307011174,Inglewood - Waggamba,Queensland,Heat,Heat-Health Risk Index,0.999,index 0-1,Heat_Raw_HHRI
+307011174,Inglewood - Waggamba,Queensland,Heat,Heat Exposure Index,0.998,index 0-1,Heat_Raw_HHRI
+307011174,Inglewood - Waggamba,Queensland,Social,Social Vulnerability Index,0.886,index 0-1,Heat_Raw_HHRI
+307011174,Inglewood - Waggamba,Queensland,Housing,Housing Condition Index,0.448,index 0-1,Heat_Raw_HHRI
+307011174,Inglewood - Waggamba,Queensland,Health,Health Status Index,0.693,index 0-1,Heat_Raw_HHRI
+307011174,Inglewood - Waggamba,Queensland,Adaptive Capacity,Adaptive Capacity Index,0.056,index 0-1; higher means less risk,Heat_Raw_HHRI
+307011174,Inglewood - Waggamba,Queensland,Age,Population aged 65+,22.8,%,Social_Raw_AGE
+307011174,Inglewood - Waggamba,Queensland,Disadvantage,IRSD score,928.0,score,SEIFA_Raw
+307011175,Miles - Wandoan,Queensland,Heat,Heat-Health Risk Index,0.996,index 0-1,Heat_Raw_HHRI
+307011175,Miles - Wandoan,Queensland,Heat,Heat Exposure Index,0.986,index 0-1,Heat_Raw_HHRI
+307011175,Miles - Wandoan,Queensland,Social,Social Vulnerability Index,0.835,index 0-1,Heat_Raw_HHRI
+307011175,Miles - Wandoan,Queensland,Housing,Housing Condition Index,0.594,index 0-1,Heat_Raw_HHRI
+307011175,Miles - Wandoan,Queensland,Health,Health Status Index,0.628,index 0-1,Heat_Raw_HHRI
+307011175,Miles - Wandoan,Queensland,Adaptive Capacity,Adaptive Capacity Index,0.039,index 0-1; higher means less risk,Heat_Raw_HHRI
+307011175,Miles - Wandoan,Queensland,Age,Population aged 65+,19.5,%,Social_Raw_AGE
+307011175,Miles - Wandoan,Queensland,Disadvantage,IRSD score,950.0,score,SEIFA_Raw
+315021404,Carpentaria,Queensland,Heat,Heat-Health Risk Index,0.996,index 0-1,Heat_Raw_HHRI
+315021404,Carpentaria,Queensland,Heat,Heat Exposure Index,0.986,index 0-1,Heat_Raw_HHRI
+315021404,Carpentaria,Queensland,Social,Social Vulnerability Index,0.817,index 0-1,Heat_Raw_HHRI
+315021404,Carpentaria,Queensland,Housing,Housing Condition Index,0.775,index 0-1,Heat_Raw_HHRI
+315021404,Carpentaria,Queensland,Health,Health Status Index,0.317,index 0-1,Heat_Raw_HHRI
+315021404,Carpentaria,Queensland,Adaptive Capacity,Adaptive Capacity Index,0.021,index 0-1; higher means less risk,Heat_Raw_HHRI
+315021404,Carpentaria,Queensland,Age,Population aged 65+,10.0,%,Social_Raw_AGE
+315021404,Carpentaria,Queensland,Disadvantage,IRSD score,719.0,score,SEIFA_Raw
+319011492,Ashfield - Kepnock,Queensland,Heat,Heat-Health Risk Index,0.998,index 0-1,Heat_Raw_HHRI
+319011492,Ashfield - Kepnock,Queensland,Heat,Heat Exposure Index,0.924,index 0-1,Heat_Raw_HHRI
+319011492,Ashfield - Kepnock,Queensland,Social,Social Vulnerability Index,0.982,index 0-1,Heat_Raw_HHRI
+319011492,Ashfield - Kepnock,Queensland,Housing,Housing Condition Index,0.681,index 0-1,Heat_Raw_HHRI
+319011492,Ashfield - Kepnock,Queensland,Health,Health Status Index,0.945,index 0-1,Heat_Raw_HHRI
+319011492,Ashfield - Kepnock,Queensland,Adaptive Capacity,Adaptive Capacity Index,0.087,index 0-1; higher means less risk,Heat_Raw_HHRI
+319011492,Ashfield - Kepnock,Queensland,Age,Population aged 65+,21.6,%,Social_Raw_AGE
+319011492,Ashfield - Kepnock,Queensland,Disadvantage,IRSD score,935.0,score,SEIFA_Raw
+319011502,Walkervale - Avenell Heights,Queensland,Heat,Heat-Health Risk Index,0.997,index 0-1,Heat_Raw_HHRI
+319011502,Walkervale - Avenell Heights,Queensland,Heat,Heat Exposure Index,0.95,index 0-1,Heat_Raw_HHRI
+319011502,Walkervale - Avenell Heights,Queensland,Social,Social Vulnerability Index,0.964,index 0-1,Heat_Raw_HHRI
+319011502,Walkervale - Avenell Heights,Queensland,Housing,Housing Condition Index,0.68,index 0-1,Heat_Raw_HHRI
+319011502,Walkervale - Avenell Heights,Queensland,Health,Health Status Index,0.986,index 0-1,Heat_Raw_HHRI
+319011502,Walkervale - Avenell Heights,Queensland,Adaptive Capacity,Adaptive Capacity Index,0.13,index 0-1; higher means less risk,Heat_Raw_HHRI
+319011502,Walkervale - Avenell Heights,Queensland,Age,Population aged 65+,24.0,%,Social_Raw_AGE
+319011502,Walkervale - Avenell Heights,Queensland,Disadvantage,IRSD score,887.0,score,SEIFA_Raw
+402021029,Davoren Park,South Australia,Heat,Heat-Health Risk Index,0.997,index 0-1,Heat_Raw_HHRI
+402021029,Davoren Park,South Australia,Heat,Heat Exposure Index,0.89,index 0-1,Heat_Raw_HHRI
+402021029,Davoren Park,South Australia,Social,Social Vulnerability Index,0.974,index 0-1,Heat_Raw_HHRI
+402021029,Davoren Park,South Australia,Housing,Housing Condition Index,0.917,index 0-1,Heat_Raw_HHRI
+402021029,Davoren Park,South Australia,Health,Health Status Index,0.696,index 0-1,Heat_Raw_HHRI
+402021029,Davoren Park,South Australia,Adaptive Capacity,Adaptive Capacity Index,0.081,index 0-1; higher means less risk,Heat_Raw_HHRI
+402021029,Davoren Park,South Australia,Age,Population aged 65+,9.2,%,Social_Raw_AGE
+402021029,Davoren Park,South Australia,Disadvantage,IRSD score,792.0,score,SEIFA_Raw
+406021139,Coober Pedy,South Australia,Heat,Heat-Health Risk Index,1.0,index 0-1,Heat_Raw_HHRI
+406021139,Coober Pedy,South Australia,Heat,Heat Exposure Index,0.948,index 0-1,Heat_Raw_HHRI
+406021139,Coober Pedy,South Australia,Social,Social Vulnerability Index,0.929,index 0-1,Heat_Raw_HHRI
+406021139,Coober Pedy,South Australia,Housing,Housing Condition Index,0.742,index 0-1,Heat_Raw_HHRI
+406021139,Coober Pedy,South Australia,Health,Health Status Index,0.522,index 0-1,Heat_Raw_HHRI
+406021139,Coober Pedy,South Australia,Adaptive Capacity,Adaptive Capacity Index,0.014,index 0-1; higher means less risk,Heat_Raw_HHRI
+406021139,Coober Pedy,South Australia,Age,Population aged 65+,30.7,%,Social_Raw_AGE
+406021139,Coober Pedy,South Australia,Disadvantage,IRSD score,868.0,score,SEIFA_Raw
+702021056,Tennant Creek,Northern Territory,Heat,Heat-Health Risk Index,0.999,index 0-1,Heat_Raw_HHRI
+702021056,Tennant Creek,Northern Territory,Heat,Heat Exposure Index,0.887,index 0-1,Heat_Raw_HHRI
+702021056,Tennant Creek,Northern Territory,Social,Social Vulnerability Index,0.966,index 0-1,Heat_Raw_HHRI
+702021056,Tennant Creek,Northern Territory,Housing,Housing Condition Index,0.933,index 0-1,Heat_Raw_HHRI
+702021056,Tennant Creek,Northern Territory,Health,Health Status Index,0.512,index 0-1,Heat_Raw_HHRI
+702021056,Tennant Creek,Northern Territory,Adaptive Capacity,Adaptive Capacity Index,0.018,index 0-1; higher means less risk,Heat_Raw_HHRI
+702021056,Tennant Creek,Northern Territory,Age,Population aged 65+,10.1,%,Social_Raw_AGE
+702021056,Tennant Creek,Northern Territory,Disadvantage,IRSD score,791.0,score,SEIFA_Raw

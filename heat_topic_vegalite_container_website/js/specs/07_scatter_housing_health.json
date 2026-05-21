@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "title": "Where housing and health risks overlap",
+  "data": {
+    "url": "data/combined_sa2.csv"
+  },
+  "mark": {
+    "type": "circle",
+    "opacity": 0.28,
+    "size": 20,
+    "filled": true
+  },
+  "encoding": {
+    "x": {
+      "field": "housing_index",
+      "type": "quantitative",
+      "title": "Housing condition index"
+    },
+    "y": {
+      "field": "health_status_index",
+      "type": "quantitative",
+      "title": "Health status index"
+    },
+    "color": {
+      "field": "hhri_quintile",
+      "type": "ordinal",
+      "title": "HHRI quintile",
+      "scale": {
+        "range": ["#f5f1e8", "#fdd9a0", "#f3a14a", "#d66a1f", "#8d3f18"]
+      }
+    },
+    "tooltip": [
+      "region_name",
+      "state_name",
+      {
+        "field": "housing_index",
+        "format": ".3f",
+        "title": "Housing condition"
+      },
+      {
+        "field": "health_status_index",
+        "format": ".3f",
+        "title": "Health status"
+      },
+      {
+        "field": "hhri",
+        "format": ".3f",
+        "title": "HHRI"
+      }
+    ]
+  },
+  "background": "transparent",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#4b5563",
+      "titleColor": "#111827",
+      "gridColor": "#e8e1d7",
+      "tickColor": "#d6cbbd"
+    },
+    "legend": {
+      "labelColor": "#374151",
+      "titleColor": "#111827"
+    },
+    "title": {
+      "font": "Georgia",
+      "fontSize": 18,
+      "anchor": "start",
+      "color": "#111827"
+    }
+  }
+}
