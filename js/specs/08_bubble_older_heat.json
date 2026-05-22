@@ -2,85 +2,131 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 300,
-  "title": "Are older communities more exposed to heat?",
-  "data": {
-    "url": "data/combined_sa2.csv"
+  "title": {
+    "text": "Do higher-risk SA2s have older populations?",
+    "subtitle": "Each dot = one SA2 (jittered) \u00b7 Red bar = mean per quintile \u00b7 Hover for detail"
   },
-  "mark": {
-    "type": "circle",
-    "opacity": 0.3,
-    "filled": true
-  },
-  "encoding": {
-    "x": {
-      "field": "exposure_index",
-      "type": "quantitative",
-      "title": "Heat exposure index"
+  "data": { "url": "data/combined_sa2.csv" },
+  "params": [
+    {
+      "name": "stateFilter3",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [null, "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
+        "labels": ["All states", "ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
+        "name": "Filter by state: "
+      }
+    }
+  ],
+  "transform": [
+    { "filter": "isFinite(toNumber(datum.hhri_quintile)) && isFinite(toNumber(datum.pct_65_plus_2024))" },
+    { "calculate": "toNumber(datum.hhri_quintile)", "as": "quintile_num" },
+    {
+      "calculate": "datum.quintile_num == 1 ? 'Lowest' : datum.quintile_num == 2 ? 'Low' : datum.quintile_num == 3 ? 'Moderate' : datum.quintile_num == 4 ? 'High' : 'Highest'",
+      "as": "quintile_label"
     },
-    "y": {
-      "field": "pct_65_plus_2024",
-      "type": "quantitative",
-      "title": "% aged 65+"
-    },
-    "size": {
-      "field": "population_age_2024",
-      "type": "quantitative",
-      "title": "Population",
-      "scale": {
-        "range": [
-          8,
-          180
+    { "calculate": "datum.quintile_num + (random() - 0.5) * 0.55", "as": "x_jitter" }
+  ],
+  "layer": [
+    {
+      "description": "Jittered SA2 dots",
+      "transform": [
+        { "filter": "stateFilter3 == null || datum.state_name == stateFilter3" }
+      ],
+      "mark": { "type": "circle", "size": 16, "filled": true, "opacity": 0.38 },
+      "encoding": {
+        "x": {
+          "field": "x_jitter",
+          "type": "quantitative",
+          "scale": { "domain": [0.5, 5.5], "nice": false },
+          "axis": {
+            "tickCount": 5,
+            "tickValues": [1, 2, 3, 4, 5],
+            "values": [1, 2, 3, 4, 5],
+            "labelExpr": "datum.value == 1 ? 'Lowest' : datum.value == 2 ? 'Low' : datum.value == 3 ? 'Moderate' : datum.value == 4 ? 'High' : datum.value == 5 ? 'Highest' : ''",
+            "title": "HHRI quintile",
+            "labelAngle": 0,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "pct_65_plus_2024",
+          "type": "quantitative",
+          "title": "% aged 65+"
+        },
+        "color": {
+          "field": "quintile_num",
+          "type": "ordinal",
+          "legend": null,
+          "scale": {
+            "domain": [1, 2, 3, 4, 5],
+            "range": ["#f5f1e8", "#fdd9a0", "#f3a14a", "#d66a1f", "#8d3f18"]
+          }
+        },
+        "tooltip": [
+          { "field": "region_name", "title": "SA2" },
+          { "field": "state_name", "title": "State" },
+          { "field": "pct_65_plus_2024", "format": ".1f", "title": "% aged 65+" },
+          { "field": "hhri", "format": ".3f", "title": "HHRI" },
+          { "field": "quintile_label", "title": "Risk level" }
         ]
       }
     },
-    "color": {
-      "field": "hhri",
-      "type": "quantitative",
-      "title": "HHRI",
-      "scale": {
-        "range": ["#f5f1e8", "#fdd9a0", "#f3a14a", "#d66a1f", "#8d3f18"]
-      }
-    },
-    "tooltip": [
-      "region_name",
-      "state_name",
-      {
-        "field": "pct_65_plus_2024",
-        "format": ".1f",
-        "title": "% aged 65+"
+    {
+      "description": "Mean tick per quintile",
+      "transform": [
+        { "filter": "stateFilter3 == null || datum.state_name == stateFilter3" },
+        {
+          "aggregate": [
+            { "op": "mean", "field": "pct_65_plus_2024", "as": "mean_older" },
+            { "op": "count", "as": "n_sa2" }
+          ],
+          "groupby": ["quintile_num", "quintile_label"]
+        }
+      ],
+      "mark": {
+        "type": "tick",
+        "color": "#c84a1b",
+        "thickness": 3,
+        "bandSize": 26,
+        "opacity": 1
       },
-      {
-        "field": "population_age_2024",
-        "format": ",d",
-        "title": "Population"
-      },
-      {
-        "field": "hhri",
-        "format": ".3f",
-        "title": "HHRI"
+      "encoding": {
+        "x": {
+          "field": "quintile_num",
+          "type": "quantitative",
+          "scale": { "domain": [0.5, 5.5], "nice": false }
+        },
+        "y": {
+          "field": "mean_older",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          { "field": "quintile_label", "title": "Risk level" },
+          { "field": "mean_older", "format": ".1f", "title": "Mean % aged 65+" },
+          { "field": "n_sa2", "title": "SA2 count" }
+        ]
       }
-    ]
-  },
+    }
+  ],
   "background": "transparent",
   "config": {
-    "view": {
-      "stroke": null
-    },
+    "view": { "stroke": null },
     "axis": {
       "labelColor": "#4b5563",
       "titleColor": "#111827",
       "gridColor": "#e8e1d7",
       "tickColor": "#d6cbbd"
     },
-    "legend": {
-      "labelColor": "#374151",
-      "titleColor": "#111827"
-    },
+    "legend": { "labelColor": "#374151", "titleColor": "#111827" },
     "title": {
       "font": "Georgia",
-      "fontSize": 18,
+      "fontSize": 14,
+      "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827"
+      "color": "#111827",
+      "subtitleColor": "#5d5248"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 250,
+  "height": 210,
   "data": {
     "values": [
       {"group": "Heat", "hospitalisations": 7104, "share": 0.7790},
@@ -12,8 +12,8 @@
     {
       "mark": {
         "type": "arc",
-        "innerRadius": 52,
-        "outerRadius": 88,
+        "innerRadius": 44,
+        "outerRadius": 72,
         "cornerRadius": 3
       },
       "encoding": {
@@ -62,7 +62,7 @@
       "mark": {
         "type": "text",
         "font": "Georgia",
-        "fontSize": 32,
+        "fontSize": 40,
         "fontWeight": 700,
         "color": "#7c2d12"
       },
@@ -81,8 +81,8 @@
       ],
       "mark": {
         "type": "text",
-        "dy": 26,
-        "fontSize": 11,
+        "dy": 28,
+        "fontSize": 12,
         "color": "#6b5f55"
       },
       "encoding": {

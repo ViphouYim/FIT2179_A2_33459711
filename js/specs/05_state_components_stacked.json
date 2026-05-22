@@ -30,7 +30,8 @@
       "type": "nominal",
       "title": "Component",
       "scale": {
-        "scheme": "redyellowblue"
+        "domain": ["exposure_index", "housing_index", "health_status_index", "vulnerability_index", "adaptive_capacity_index"],
+        "range": ["#c2410c", "#e8883a", "#fabb6e", "#8d3f18", "#6f8797"]
       },
       "legend": {
         "orient": "bottom",

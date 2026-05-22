@@ -16,30 +16,28 @@
     {
       "calculate": "format(datum.hosp, ',d')",
       "as": "hosp_label"
-    },
-    {
-      "calculate": "datum.hosp + 120",
-      "as": "peak_label_y"
     }
   ],
-  "encoding": {
-    "x": {
-      "field": "period",
-      "type": "ordinal",
-      "title": "Financial year",
-      "axis": { "labelAngle": -35, "labelPadding": 6 }
-    },
-    "y": {
-      "field": "hosp",
-      "type": "quantitative",
-      "title": "Hospitalisations"
-    }
-  },
   "layer": [
     {
       "mark": {
+        "type": "rect",
+        "color": "#f5e8d6",
+        "opacity": 0.42
+      },
+      "encoding": {
+        "y": {
+          "datum": 1000
+        },
+        "y2": {
+          "datum": 1250
+        }
+      }
+    },
+    {
+      "mark": {
         "type": "rule",
-        "strokeWidth": 1,
+        "strokeWidth": 1.2,
         "color": "#b8a896",
         "strokeDash": [4, 4]
       },
@@ -50,18 +48,26 @@
       }
     },
     {
+      "transform": [
+        {
+          "filter": "datum.period == '2013-14'"
+        }
+      ],
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "bottom",
-        "dx": 6,
-        "dy": -4,
+        "dx": -20,
+        "dy": -10,
         "fontSize": 10,
-        "color": "#6b5f55"
+        "fontWeight": 700,
+        "color": "#6b5f55",
+        "background": "#f8efe3"
       },
       "encoding": {
         "x": {
-          "datum": "2012-13"
+          "field": "period",
+          "type": "ordinal"
         },
         "y": {
           "datum": 1000
@@ -78,6 +84,18 @@
         "color": "#9a3412"
       },
       "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": "Financial year",
+          "axis": { "labelAngle": -35, "labelPadding": 6 }
+        },
+        "y": {
+          "field": "hosp",
+          "type": "quantitative",
+          "title": "Hospitalisations",
+          "scale": { "domain": [0, 1250] }
+        },
         "tooltip": [
           "period",
           {
@@ -94,6 +112,20 @@
         "filled": true,
         "size": 65,
         "color": "#ea580c"
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": "Financial year",
+          "axis": { "labelAngle": -35, "labelPadding": 6 }
+        },
+        "y": {
+          "field": "hosp",
+          "type": "quantitative",
+          "title": "Hospitalisations",
+          "scale": { "domain": [0, 1250] }
+        }
       }
     },
     {
@@ -103,9 +135,12 @@
         }
       ],
       "mark": {
-        "type": "rule",
-        "strokeWidth": 1.5,
-        "color": "#9a3412"
+        "type": "point",
+        "filled": true,
+        "size": 120,
+        "color": "#ea580c",
+        "stroke": "#9a3412",
+        "strokeWidth": 1.6
       },
       "encoding": {
         "x": {
@@ -114,10 +149,8 @@
         },
         "y": {
           "field": "hosp",
-          "type": "quantitative"
-        },
-        "y2": {
-          "field": "peak_label_y"
+          "type": "quantitative",
+          "scale": { "domain": [0, 1250] }
         }
       }
     },
@@ -129,17 +162,24 @@
       ],
       "mark": {
         "type": "text",
-        "dx": 12,
-        "dy": -22,
-        "align": "left",
+        "dx": 0,
+        "dy": -18,
+        "align": "center",
+        "baseline": "bottom",
         "fontSize": 11,
         "fontWeight": 700,
-        "color": "#7c2d12"
+        "color": "#7c2d12",
+        "background": "#f8efe3"
       },
       "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal"
+        },
         "y": {
-          "field": "peak_label_y",
-          "type": "quantitative"
+          "field": "hosp",
+          "type": "quantitative",
+          "scale": { "domain": [0, 1250] }
         },
         "text": {
           "value": "Peak: 1,108"

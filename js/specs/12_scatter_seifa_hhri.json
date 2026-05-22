@@ -2,75 +2,111 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 300,
-  "title": "Are disadvantaged areas facing higher heat risk?",
+  "title": {
+    "text": "Disadvantaged SA2s record higher heat-health risk",
+    "subtitle": "Each tick = one SA2 · Red bar = mean HHRI per decile · Decile 1 = most disadvantaged"
+  },
   "data": {
     "url": "data/combined_sa2.csv"
   },
-  "mark": {
-    "type": "circle",
-    "opacity": 0.28,
-    "size": 20,
-    "filled": true
-  },
-  "encoding": {
-    "x": {
-      "field": "seifa_irsd_score",
-      "type": "quantitative",
-      "title": "SEIFA IRSD score (lower = more disadvantaged)"
+  "transform": [
+    {
+      "filter": "isValid(datum.seifa_irsd_decile) && isFinite(toNumber(datum.seifa_irsd_decile)) && isFinite(toNumber(datum.hhri))"
     },
-    "y": {
-      "field": "hhri",
-      "type": "quantitative",
-      "title": "HHRI"
+    {
+      "calculate": "toNumber(datum.seifa_irsd_decile)",
+      "as": "decile"
     },
-    "color": {
-      "field": "hhri_quintile",
-      "type": "ordinal",
-      "title": "HHRI quintile",
-      "scale": {
-        "range": ["#f5f1e8", "#fdd9a0", "#f3a14a", "#d66a1f", "#8d3f18"]
+    {
+      "calculate": "toNumber(datum.hhri)",
+      "as": "hhri_num"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "tick",
+        "opacity": 0.22,
+        "thickness": 1,
+        "bandSize": 18
+      },
+      "encoding": {
+        "x": {
+          "field": "decile",
+          "type": "ordinal",
+          "title": "SEIFA IRSD decile (1 = most disadvantaged, 10 = least)",
+          "axis": { "labelAngle": 0 }
+        },
+        "y": {
+          "field": "hhri_num",
+          "type": "quantitative",
+          "title": "HHRI"
+        },
+        "color": {
+          "field": "decile",
+          "type": "ordinal",
+          "legend": null,
+          "scale": {
+            "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "range": ["#8d3f18","#b85020","#d66a1f","#e8883a","#f3a14a","#fabb6e","#fcd090","#fde4b5","#fef1d8","#fdf7ee"]
+          }
+        },
+        "tooltip": [
+          { "field": "region_name", "title": "SA2" },
+          { "field": "state_name", "title": "State" },
+          { "field": "decile", "title": "SEIFA decile" },
+          { "field": "hhri_num", "format": ".3f", "title": "HHRI" }
+        ]
       }
     },
-    "tooltip": [
-      "region_name",
-      "state_name",
-      {
-        "field": "seifa_irsd_score",
-        "format": ".0f",
-        "title": "SEIFA IRSD"
+    {
+      "mark": {
+        "type": "tick",
+        "color": "#c84a1b",
+        "thickness": 3,
+        "bandSize": 28,
+        "opacity": 1
       },
-      {
-        "field": "seifa_irsd_decile",
-        "format": ".0f",
-        "title": "SEIFA decile"
-      },
-      {
-        "field": "hhri",
-        "format": ".3f",
-        "title": "HHRI"
+      "transform": [
+        {
+          "aggregate": [{ "op": "mean", "field": "hhri_num", "as": "mean_hhri" }],
+          "groupby": ["decile"]
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "decile",
+          "type": "ordinal",
+          "axis": { "labelAngle": 0 }
+        },
+        "y": {
+          "field": "mean_hhri",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          { "field": "decile", "title": "SEIFA decile" },
+          { "field": "mean_hhri", "format": ".3f", "title": "Mean HHRI" }
+        ]
       }
-    ]
-  },
+    }
+  ],
   "background": "transparent",
   "config": {
-    "view": {
-      "stroke": null
-    },
+    "view": { "stroke": null },
     "axis": {
       "labelColor": "#4b5563",
       "titleColor": "#111827",
       "gridColor": "#e8e1d7",
       "tickColor": "#d6cbbd"
     },
-    "legend": {
-      "labelColor": "#374151",
-      "titleColor": "#111827"
-    },
+    "legend": { "labelColor": "#374151", "titleColor": "#111827" },
     "title": {
       "font": "Georgia",
-      "fontSize": 18,
+      "fontSize": 14,
+      "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827"
+      "color": "#111827",
+      "subtitleColor": "#5d5248"
     }
   }
 }

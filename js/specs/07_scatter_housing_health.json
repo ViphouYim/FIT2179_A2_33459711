@@ -2,75 +2,81 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 300,
-  "title": "Where housing and health risks overlap",
-  "data": {
-    "url": "data/combined_sa2.csv"
+  "title": {
+    "text": "Where housing and health risk cluster together",
+    "subtitle": "Each cell = a group of SA2s with similar scores \u00b7 Colour = mean HHRI in that bin \u00b7 Hover for detail"
   },
-  "mark": {
-    "type": "circle",
-    "opacity": 0.28,
-    "size": 20,
-    "filled": true
-  },
+  "data": { "url": "data/combined_sa2.csv" },
+  "params": [
+    {
+      "name": "stateFilter2",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [null, "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
+        "labels": ["All states", "ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
+        "name": "Filter by state: "
+      }
+    }
+  ],
+  "transform": [
+    { "filter": "stateFilter2 == null || datum.state_name == stateFilter2" },
+    { "filter": "isFinite(toNumber(datum.housing_index)) && isFinite(toNumber(datum.health_status_index))" }
+  ],
+  "mark": "rect",
   "encoding": {
     "x": {
       "field": "housing_index",
+      "bin": { "maxbins": 10 },
       "type": "quantitative",
       "title": "Housing condition index"
     },
     "y": {
       "field": "health_status_index",
+      "bin": { "maxbins": 10 },
       "type": "quantitative",
       "title": "Health status index"
     },
     "color": {
-      "field": "hhri_quintile",
-      "type": "ordinal",
-      "title": "HHRI quintile",
+      "aggregate": "mean",
+      "field": "hhri",
+      "type": "quantitative",
+      "title": "Mean HHRI",
       "scale": {
-        "range": ["#f5f1e8", "#fdd9a0", "#f3a14a", "#d66a1f", "#8d3f18"]
+        "domain": [0, 1],
+        "range": ["#f5f1e8", "#fee391", "#fe9929", "#d95f0e", "#8b4513"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "gradientLength": 160,
+        "titleFontSize": 11
       }
     },
     "tooltip": [
-      "region_name",
-      "state_name",
-      {
-        "field": "housing_index",
-        "format": ".3f",
-        "title": "Housing condition"
-      },
-      {
-        "field": "health_status_index",
-        "format": ".3f",
-        "title": "Health status"
-      },
-      {
-        "field": "hhri",
-        "format": ".3f",
-        "title": "HHRI"
-      }
+      { "bin": true, "field": "housing_index", "title": "Housing index bin" },
+      { "bin": true, "field": "health_status_index", "title": "Health status bin" },
+      { "aggregate": "mean", "field": "hhri", "format": ".3f", "title": "Mean HHRI" },
+      { "aggregate": "count", "title": "SA2 count in cell" }
     ]
   },
   "background": "transparent",
   "config": {
-    "view": {
-      "stroke": null
-    },
+    "view": { "stroke": null },
     "axis": {
       "labelColor": "#4b5563",
       "titleColor": "#111827",
       "gridColor": "#e8e1d7",
       "tickColor": "#d6cbbd"
     },
-    "legend": {
-      "labelColor": "#374151",
-      "titleColor": "#111827"
-    },
+    "legend": { "labelColor": "#374151", "titleColor": "#111827" },
     "title": {
       "font": "Georgia",
-      "fontSize": 18,
+      "fontSize": 14,
+      "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827"
+      "color": "#111827",
+      "subtitleColor": "#5d5248"
     }
   }
 }

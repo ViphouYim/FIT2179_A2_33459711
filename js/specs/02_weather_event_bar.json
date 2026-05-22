@@ -2,6 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 250,
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  },
   "data": {
     "url": "data/section01_health_aihw_from_workbook.csv"
   },
@@ -78,13 +82,14 @@
         "align": "left",
         "baseline": "middle",
         "dx": 8,
-        "fontSize": 12,
+        "fontSize": 11,
         "fontWeight": 700,
         "color": "#111827"
       },
       "encoding": {
         "text": {
-          "field": "bar_label"
+          "field": "hosp",
+          "format": ",d"
         }
       }
     }

@@ -16,10 +16,6 @@ const charts = [
     "js/specs/03_yearly_line.json"
   ],
   [
-    "heat_share_donut",
-    "js/specs/13_heat_share_donut.json"
-  ],
-  [
     "top10_hhri",
     "js/specs/04_top10_hhri.json"
   ],
