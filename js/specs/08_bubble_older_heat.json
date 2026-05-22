@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 300,
+  "height": 380,
   "title": {
     "text": "Do higher-risk SA2s have older populations?",
     "subtitle": "Each dot = one SA2 (jittered) \u00b7 Red bar = mean per quintile \u00b7 Hover for detail"

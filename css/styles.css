@@ -227,6 +227,7 @@ p { line-height: 1.45; }
 .three-col { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .full-width { grid-template-columns: 1fr; }
 .feature-map { grid-template-columns: minmax(0, 1fr) 280px; }
+.three-col .chart-card { align-self: stretch; height: 100%; box-sizing: border-box; }
 .three-col .chart-card .chart { margin-top: auto; }
 .chart-card {
   padding: 18px;
