@@ -519,8 +519,64 @@ p { line-height: 1.45; }
 .vega-bindings:empty { display: none; }
 .vega-bind select { margin-left: 8px; padding: 5px; border: 1px solid var(--ink); background: white; }
 .chart-error { color: #991b1b; }
+
+/* ── Section 03 ── */
+.section03-driver-legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.section03-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.section03-chip {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1.5px solid;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.section03-chip-sep { font-size: .95rem; color: var(--muted); font-weight: 700; }
+.chip-exposure { background: #fff4dc; border-color: #e7c48c; color: #5a3e0a; }
+.chip-vuln     { background: #f7e6de; border-color: #cfac98; color: #4a2e20; }
+.chip-housing  { background: #ffe9d8; border-color: #e4b18f; color: #5a2e10; }
+.chip-health   { background: #ffe2de; border-color: #df9f99; color: #5a1c1c; }
+.chip-age      { background: #f2ebe0; border-color: #c5ab8c; color: #4a3520; }
+.chip-seifa    { background: #e9efe5; border-color: #aab99d; color: #2a4020; }
+
+.section03-main-row {
+  grid-template-columns: minmax(210px, 0.36fr) minmax(0, 0.64fr);
+  align-items: stretch;
+}
+.section03-driver-panel {
+  padding: 18px;
+  background: #fff8ef;
+  border-left: 3px solid #c78b57;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.section03-driver-panel h3 { margin: 0; font-size: 1rem; }
+.section03-driver-panel p  { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.42; }
+.section03-driver-panel ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+.section03-driver-panel li { margin-bottom: 6px; }
+.section03-driver-panel li:last-child { margin-bottom: 0; }
+.section03-panel-note {
+  padding: 10px 12px;
+  background: #fff3e0;
+  border-left: 2px solid #c84a1b;
+  font-size: .88rem !important;
+  color: #4a3f36 !important;
+}
 @media (max-width: 980px) {
-  .hero, .two-col, .feature-map, .section-title, .section05-layout { grid-template-columns: 1fr; }
+  .hero, .two-col, .feature-map, .section-title, .section05-layout, .section03-main-row { grid-template-columns: 1fr; }
   .hero { align-items: start; }
   .hero-copy {
     justify-content: flex-start;

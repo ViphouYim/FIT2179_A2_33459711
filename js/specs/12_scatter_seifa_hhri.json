@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 400,
+  "height": 280,
   "title": {
-    "text": "Disadvantaged SA2s record higher heat-health risk",
-    "subtitle": "Each tick = one SA2 · Red bar = mean HHRI per decile · Decile 1 = most disadvantaged"
+    "text": "Disadvantage is associated with higher heat-health risk",
+    "subtitle": "Mean HHRI per SEIFA decile \u00b7 Decile 1 = most disadvantaged \u00b7 Decile 10 = least disadvantaged"
   },
   "data": {
     "url": "data/combined_sa2.csv"
@@ -13,34 +13,37 @@
     {
       "filter": "isValid(datum.seifa_irsd_decile) && isFinite(toNumber(datum.seifa_irsd_decile)) && isFinite(toNumber(datum.hhri))"
     },
+    { "calculate": "toNumber(datum.seifa_irsd_decile)", "as": "decile" },
+    { "calculate": "toNumber(datum.hhri)", "as": "hhri_num" },
     {
-      "calculate": "toNumber(datum.seifa_irsd_decile)",
-      "as": "decile"
-    },
-    {
-      "calculate": "toNumber(datum.hhri)",
-      "as": "hhri_num"
+      "aggregate": [
+        { "op": "mean", "field": "hhri_num", "as": "mean_hhri" },
+        { "op": "count", "as": "n_sa2" }
+      ],
+      "groupby": ["decile"]
     }
   ],
   "layer": [
     {
-      "mark": {
-        "type": "tick",
-        "opacity": 0.22,
-        "thickness": 1,
-        "bandSize": 18
-      },
+      "mark": { "type": "bar", "cornerRadiusTopRight": 3, "cornerRadiusBottomRight": 3 },
       "encoding": {
-        "x": {
+        "y": {
           "field": "decile",
           "type": "ordinal",
-          "title": "SEIFA IRSD decile (1 = most disadvantaged, 10 = least)",
-          "axis": { "labelAngle": 0 }
+          "sort": "ascending",
+          "title": "SEIFA IRSD decile",
+          "axis": {
+            "labelExpr": "datum.value == 1 ? '1 \u2014 Most disadvantaged' : datum.value == 10 ? '10 \u2014 Least disadvantaged' : datum.value + ''",
+            "labelAngle": 0,
+            "labelFontSize": 11
+          }
         },
-        "y": {
-          "field": "hhri_num",
+        "x": {
+          "field": "mean_hhri",
           "type": "quantitative",
-          "title": "HHRI"
+          "title": "Mean HHRI",
+          "scale": { "domain": [0, 0.6] },
+          "axis": { "format": ".2f" }
         },
         "color": {
           "field": "decile",
@@ -52,41 +55,27 @@
           }
         },
         "tooltip": [
-          { "field": "region_name", "title": "SA2" },
-          { "field": "state_name", "title": "State" },
           { "field": "decile", "title": "SEIFA decile" },
-          { "field": "hhri_num", "format": ".3f", "title": "HHRI" }
+          { "field": "mean_hhri", "format": ".3f", "title": "Mean HHRI" },
+          { "field": "n_sa2", "title": "SA2 count" }
         ]
       }
     },
     {
-      "mark": {
-        "type": "tick",
-        "color": "#c84a1b",
-        "thickness": 3,
-        "bandSize": 28,
-        "opacity": 1
-      },
-      "transform": [
-        {
-          "aggregate": [{ "op": "mean", "field": "hhri_num", "as": "mean_hhri" }],
-          "groupby": ["decile"]
-        }
-      ],
+      "mark": { "type": "text", "align": "left", "dx": 5, "fontSize": 11, "fontWeight": "bold" },
       "encoding": {
-        "x": {
+        "y": { "field": "decile", "type": "ordinal", "sort": "ascending" },
+        "x": { "field": "mean_hhri", "type": "quantitative" },
+        "text": { "field": "mean_hhri", "format": ".3f" },
+        "color": {
           "field": "decile",
           "type": "ordinal",
-          "axis": { "labelAngle": 0 }
-        },
-        "y": {
-          "field": "mean_hhri",
-          "type": "quantitative"
-        },
-        "tooltip": [
-          { "field": "decile", "title": "SEIFA decile" },
-          { "field": "mean_hhri", "format": ".3f", "title": "Mean HHRI" }
-        ]
+          "legend": null,
+          "scale": {
+            "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "range": ["#3a1508","#4e2010","#5e3010","#603020","#604020","#5a4218","#484218","#383818","#303018","#282818"]
+          }
+        }
       }
     }
   ],
