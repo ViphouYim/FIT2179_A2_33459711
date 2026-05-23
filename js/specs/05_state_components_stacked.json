@@ -15,8 +15,8 @@
       "type": "nominal",
       "title": null,
       "axis": {
-        "labelAngle": 0,
-        "labelFontSize": 10
+        "labelAngle": -32,
+        "labelFontSize": 9
       }
     },
     "y": {
@@ -30,7 +30,7 @@
       "type": "nominal",
       "title": "Component",
       "scale": {
-        "domain": ["exposure_index", "housing_index", "health_status_index", "vulnerability_index", "adaptive_capacity_index"],
+        "domain": ["Heat exposure", "Vulnerability", "Housing condition", "Health status", "Adaptive capacity"],
         "range": ["#c2410c", "#e8883a", "#fabb6e", "#8d3f18", "#6f8797"]
       },
       "legend": {
