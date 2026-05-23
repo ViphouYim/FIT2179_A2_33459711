@@ -1,56 +1,93 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 330,
-  "title": "Distribution of heat-health risk by state/territory",
-  "data": {
-    "url": "data/combined_sa2.csv"
+  "height": 340,
+  "title": {
+    "text": "Distribution of heat-health risk by state/territory",
+    "subtitle": "Each dot = one SA2 \u00b7 Box = IQR (middle 50%) \u00b7 Dark line = median \u00b7 States sorted highest to lowest risk"
   },
-  "mark": {
-    "type": "boxplot",
-    "extent": "min-max"
-  },
-  "encoding": {
-    "x": {
-      "field": "state_name",
-      "type": "nominal",
-      "title": null,
-      "axis": {
-        "labelAngle": 0,
-        "labelFontSize": 10
+  "data": { "url": "data/combined_sa2.csv" },
+  "transform": [
+    {
+      "filter": "datum.state_name != 'Unknown' && datum.state_name != 'Other Territories' && isFinite(toNumber(datum.hhri))"
+    },
+    { "calculate": "toNumber(datum.hhri)", "as": "hhri_num" },
+    { "calculate": "random()", "as": "rand" }
+  ],
+  "layer": [
+    {
+      "description": "Jittered individual SA2 dots",
+      "mark": { "type": "circle", "size": 11, "opacity": 0.25, "color": "#c4956a" },
+      "encoding": {
+        "x": {
+          "field": "state_name", "type": "nominal",
+          "sort": { "op": "median", "field": "hhri_num", "order": "descending" },
+          "title": null,
+          "axis": { "labelAngle": -32, "labelFontSize": 10 }
+        },
+        "xOffset": {
+          "field": "rand", "type": "quantitative",
+          "scale": { "range": [-13, 13] }
+        },
+        "y": {
+          "field": "hhri_num", "type": "quantitative",
+          "title": "HHRI",
+          "scale": { "domain": [0, 1] }
+        },
+        "tooltip": [
+          { "field": "region_name", "title": "SA2" },
+          { "field": "state_name", "title": "State" },
+          { "field": "hhri_num", "format": ".3f", "title": "HHRI" }
+        ]
       }
     },
-    "y": {
-      "field": "hhri",
-      "type": "quantitative",
-      "title": "HHRI"
-    },
-    "color": {
-      "field": "state_name",
-      "type": "nominal",
-      "legend": null
+    {
+      "description": "Boxplot (IQR + whiskers + outliers)",
+      "mark": { "type": "boxplot", "extent": 1.5 },
+      "encoding": {
+        "x": {
+          "field": "state_name", "type": "nominal",
+          "sort": { "op": "median", "field": "hhri_num", "order": "descending" },
+          "title": null,
+          "axis": { "labelAngle": -32, "labelFontSize": 10 }
+        },
+        "y": {
+          "field": "hhri_num", "type": "quantitative",
+          "title": "HHRI",
+          "scale": { "domain": [0, 1] }
+        },
+        "color": { "value": "#d4956a" },
+        "tooltip": [
+          { "field": "state_name", "title": "State" },
+          { "field": "hhri_num", "format": ".3f", "title": "HHRI" }
+        ]
+      }
     }
-  },
+  ],
   "background": "transparent",
   "config": {
-    "view": {
-      "stroke": null
-    },
+    "view": { "stroke": null },
     "axis": {
       "labelColor": "#4b5563",
       "titleColor": "#111827",
       "gridColor": "#e8e1d7",
       "tickColor": "#d6cbbd"
     },
-    "legend": {
-      "labelColor": "#374151",
-      "titleColor": "#111827"
-    },
+    "legend": { "labelColor": "#374151", "titleColor": "#111827" },
     "title": {
       "font": "Georgia",
-      "fontSize": 18,
+      "fontSize": 14,
+      "subtitleFontSize": 11,
       "anchor": "start",
-      "color": "#111827"
+      "color": "#111827",
+      "subtitleColor": "#5d5248"
+    },
+    "boxplot": {
+      "median": { "color": "#8c2d04", "strokeWidth": 2.5 },
+      "box": { "stroke": "#7a4820", "strokeWidth": 1.2 },
+      "rule": { "color": "#7a4820", "strokeWidth": 1 },
+      "ticks": { "color": "#7a4820" },
+      "outliers": { "color": "#8c2d04", "size": 20, "opacity": 0.7 }
     }
   }
 }
