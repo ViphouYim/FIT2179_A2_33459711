@@ -1,67 +1,33 @@
-{
+﻿{
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 340,
   "title": {
     "text": "Distribution of heat-health risk by state/territory",
-    "subtitle": "Each dot = one SA2 \u00b7 Box = IQR (middle 50%) \u00b7 Dark line = median \u00b7 States sorted highest to lowest risk"
+    "subtitle": "Box = IQR (middle 50%) \u00b7 Dark line = median \u00b7 Dots = statistical outliers \u00b7 States sorted highest to lowest risk"
   },
   "data": { "url": "data/combined_sa2.csv" },
   "transform": [
-    {
-      "filter": "datum.state_name != 'Unknown' && datum.state_name != 'Other Territories' && isValid(datum.hhri)"
-    },
-    { "calculate": "random()", "as": "rand" }
+    { "filter": "datum.state_name != 'Unknown' && datum.state_name != 'Other Territories' && isValid(datum.hhri)" }
   ],
-  "layer": [
-    {
-      "description": "Jittered individual SA2 dots",
-      "mark": { "type": "circle", "size": 11, "opacity": 0.25, "color": "#c4956a" },
-      "encoding": {
-        "x": {
-          "field": "state_name", "type": "nominal",
-          "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"],
-          "title": null,
-          "axis": { "labelAngle": -32, "labelFontSize": 10 }
-        },
-        "xOffset": {
-          "field": "rand", "type": "quantitative",
-          "scale": { "range": [-13, 13] }
-        },
-        "y": {
-          "field": "hhri", "type": "quantitative",
-          "title": "HHRI",
-          "scale": { "domain": [0, 1] }
-        },
-        "tooltip": [
-          { "field": "region_name", "title": "SA2" },
-          { "field": "state_name", "title": "State" },
-          { "field": "hhri", "format": ".3f", "title": "HHRI" }
-        ]
-      }
+  "mark": { "type": "boxplot", "extent": 1.5 },
+  "encoding": {
+    "x": {
+      "field": "state_name", "type": "nominal",
+      "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"],
+      "title": null,
+      "axis": { "labelAngle": -32, "labelFontSize": 10 }
     },
-    {
-      "description": "Boxplot (IQR + whiskers + outliers)",
-      "mark": { "type": "boxplot", "extent": 1.5 },
-      "encoding": {
-        "x": {
-          "field": "state_name", "type": "nominal",
-          "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"],
-          "title": null,
-          "axis": { "labelAngle": -32, "labelFontSize": 10 }
-        },
-        "y": {
-          "field": "hhri", "type": "quantitative",
-          "title": "HHRI",
-          "scale": { "domain": [0, 1] }
-        },
-        "tooltip": [
-          { "field": "state_name", "title": "State" },
-          { "field": "hhri", "format": ".3f", "title": "HHRI" }
-        ]
-      }
-    }
-  ],
+    "y": {
+      "field": "hhri", "type": "quantitative",
+      "title": "HHRI",
+      "scale": { "domain": [0, 1] }
+    },
+    "tooltip": [
+      { "field": "state_name", "title": "State" },
+      { "field": "hhri", "format": ".3f", "title": "HHRI" }
+    ]
+  },
   "background": "transparent",
   "config": {
     "view": { "stroke": null },
