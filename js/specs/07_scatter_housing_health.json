@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 260,
+  "height": 300,
   "title": {
     "text": "Where housing and health risk cluster together",
     "subtitle": "Each cell = a group of SA2s with similar scores \u00b7 Colour = mean HHRI in that bin \u00b7 Hover for detail"

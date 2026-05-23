@@ -678,8 +678,11 @@ p { line-height: 1.45; }
   line-height: 1.45;
 }
 
-.section03-three-col {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.section03-pair-row {
+  /* housing + bubble side-by-side */
+}
+.section03-seifa-row {
+  margin-top: 16px;
 }
 .section03-chips {
   display: flex;
