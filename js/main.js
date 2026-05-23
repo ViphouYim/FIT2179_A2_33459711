@@ -4,10 +4,6 @@ const charts = [
     "js/specs/01_map_hhri.json"
   ],
   [
-    "excluded_regions_map",
-    "js/specs/14_excluded_regions_inset.json"
-  ],
-  [
     "weather_event_bar",
     "js/specs/02_weather_event_bar.json"
   ],
