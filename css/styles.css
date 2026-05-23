@@ -665,7 +665,7 @@ p { line-height: 1.45; }
   gap: 24px;
   padding: 14px 18px;
   align-items: center;
-  margin-bottom: 0;
+  margin-bottom: 18px;
 }
 
 .section03-intro-left .mini-kicker,
@@ -678,11 +678,14 @@ p { line-height: 1.45; }
   line-height: 1.45;
 }
 
+.section03-hero-chart {
+  margin-bottom: 18px;
+}
 .section03-pair-row {
-  /* housing + bubble side-by-side */
+  /* housing + bubble side-by-side — inherits .grid margin-bottom: 18px */
 }
 .section03-seifa-row {
-  margin-top: 16px;
+  /* last panel before section-bridge — no extra top margin needed */
 }
 .section03-chips {
   display: flex;
