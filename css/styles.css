@@ -658,6 +658,29 @@ p { line-height: 1.45; }
   margin-bottom: 6px;
   flex-wrap: wrap;
 }
+
+.section03-intro-bar {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 24px;
+  padding: 14px 18px;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.section03-intro-left .mini-kicker,
+.section03-intro-right .mini-kicker { margin-bottom: 6px; }
+
+.section03-intro-left p:not(.mini-kicker) {
+  margin: 0;
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.section03-three-col {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .section03-chips {
   display: flex;
   flex-wrap: wrap;

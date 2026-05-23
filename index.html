@@ -153,84 +153,69 @@
       <p class="section-title-intro">Heat-health risk is highest where multiple pressures overlap. This section separates the index into exposure, vulnerability, housing, health, age and socioeconomic conditions to show which combinations create the strongest local concern.</p>
     </section>
 
-    <div class="panel section03-driver-legend">
-      <p class="mini-kicker">Risk increases when these overlap</p>
-      <div class="section03-chips">
-        <span class="section03-chip chip-exposure">Exposure</span>
-        <span class="section03-chip-sep">+</span>
-        <span class="section03-chip chip-vuln">Vulnerability</span>
-        <span class="section03-chip-sep">+</span>
-        <span class="section03-chip chip-housing">Housing</span>
-        <span class="section03-chip-sep">+</span>
-        <span class="section03-chip chip-health">Health</span>
-        <span class="section03-chip-sep">+</span>
-        <span class="section03-chip chip-age">Age</span>
-        <span class="section03-chip-sep">+</span>
-        <span class="section03-chip chip-seifa">Disadvantage</span>
+    <div class="panel section03-intro-bar">
+      <div class="section03-intro-left">
+        <p class="mini-kicker">Compound pressure</p>
+        <p>High-risk SA2s are not just hot places. Risk is highest where heat exposure coincides with social vulnerability, housing pressure, poor health, older populations and socioeconomic disadvantage — no single factor alone produces the highest scores.</p>
+      </div>
+      <div class="section03-intro-right">
+        <p class="mini-kicker">Risk increases when these overlap</p>
+        <div class="section03-chips">
+          <span class="section03-chip chip-exposure">Exposure</span>
+          <span class="section03-chip-sep">+</span>
+          <span class="section03-chip chip-vuln">Vulnerability</span>
+          <span class="section03-chip-sep">+</span>
+          <span class="section03-chip chip-housing">Housing</span>
+          <span class="section03-chip-sep">+</span>
+          <span class="section03-chip chip-health">Health</span>
+          <span class="section03-chip-sep">+</span>
+          <span class="section03-chip chip-age">Age</span>
+          <span class="section03-chip-sep">+</span>
+          <span class="section03-chip chip-seifa">Disadvantage</span>
+        </div>
       </div>
     </div>
 
-    <section class="grid section03-main-row">
-      <aside class="panel section03-driver-panel">
-        <p class="chart-kicker">Compound pressure</p>
-        <h3>High-risk SA2s are not just hot places</h3>
-        <p>They are places where heat exposure combines with:</p>
-        <ul>
-          <li><strong>Social vulnerability</strong> — households less equipped to cope during heat events</li>
-          <li><strong>Housing pressure</strong> — overcrowding and poor-quality dwellings reduce resilience</li>
-          <li><strong>Poorer health</strong> — pre-existing conditions increase heat sensitivity</li>
-          <li><strong>Older populations</strong> — greater physiological vulnerability to heat stress</li>
-          <li><strong>Socioeconomic disadvantage</strong> — fewer resources to adapt or recover</li>
-        </ul>
-        <p class="section03-panel-note">The upper-right quadrant of the chart marks the clearest compound-risk zone: SA2s where high heat exposure and high social vulnerability occur together.</p>
-      </aside>
-      <article class="panel chart-card">
-        <div class="chart-heading">
-          <p class="chart-kicker">Main driver — quadrant scatterplot</p>
-          <h3>Exposure becomes more serious when vulnerability is high</h3>
-          <p>Each dot is one SA2. Colour shows HHRI risk score. Shaded zones mark the four quadrant types. Use the dropdown to explore states.</p>
-        </div>
-        <p class="chart-description">The upper-right quadrant identifies SA2s where high heat exposure coincides with high social vulnerability — the clearest compound-risk pattern. NT and QLD SA2s dominate this zone, but Queensland and Western Australia also contribute concentrated clusters.</p>
-        <div id="scatter_exposure_vulnerability" class="chart vega-embed"></div>
-        <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
-      </article>
-    </section>
+    <article class="panel chart-card">
+      <div class="chart-heading">
+        <p class="chart-kicker">Main driver — quadrant scatterplot</p>
+        <h3>Exposure becomes more serious when vulnerability is high</h3>
+        <p>Each dot is one SA2. Colour shows HHRI risk score. Shaded zones mark the four quadrant types. Use the dropdown to explore states.</p>
+      </div>
+      <p class="chart-description">The upper-right quadrant identifies SA2s where high heat exposure coincides with high social vulnerability — the clearest compound-risk pattern. NT and QLD SA2s dominate this zone, but Western Australia also contributes concentrated clusters.</p>
+      <div id="scatter_exposure_vulnerability" class="chart vega-embed"></div>
+      <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
+    </article>
 
-    <section class="grid two-col">
+    <div class="grid section03-three-col">
       <article class="panel chart-card">
         <div class="chart-heading">
-          <p class="chart-kicker">Dual pressure — density view</p>
-          <h3>Housing and health pressures can compound risk</h3>
-          <p>Each cell groups SA2s with similar scores. Darker = higher mean HHRI. Use the state dropdown to compare.</p>
+          <p class="chart-kicker">Dual pressure</p>
+          <h3>Housing and health pressures compound risk</h3>
+          <p>Darker cells = higher mean HHRI. Upper-right = where both dimensions drive the highest risk.</p>
         </div>
-        <p class="chart-description">SA2s with both poorer housing conditions and poorer health status may face greater difficulty coping during extreme heat. The darkest cells in the upper-right confirm where both dimensions align and risk is highest.</p>
         <div id="scatter_housing_health" class="chart"></div>
-        <p class="chart-note">Takeaway: Simultaneous housing and health disadvantage reliably predicts higher overall HHRI scores.</p>
+        <p class="chart-note">Takeaway: Simultaneous housing and health disadvantage reliably predicts higher overall HHRI.</p>
       </article>
       <article class="panel chart-card">
         <div class="chart-heading">
-          <p class="chart-kicker">Population structure — bubble chart</p>
+          <p class="chart-kicker">Population structure</p>
           <h3>Older populations add planning priority</h3>
-          <p>Each bubble is one SA2. Size = population. Colour = HHRI risk band. Upper-right = priority zone.</p>
+          <p>Bubble size = population. Colour = HHRI risk band. Upper-right = priority zone.</p>
         </div>
-        <p class="chart-description">Larger bubbles in the high-exposure, high older-population zone represent communities where both demographic vulnerability and population size may increase planning priority during heat events.</p>
         <div id="bubble_older_heat" class="chart"></div>
-        <p class="chart-note">Takeaway: Communities combining high heat exposure with large older populations warrant targeted planning attention regardless of their overall HHRI rank.</p>
+        <p class="chart-note">Takeaway: Large older populations in high-exposure areas warrant targeted planning attention.</p>
       </article>
-    </section>
-
-    <section class="grid full-width">
       <article class="panel chart-card">
         <div class="chart-heading">
           <p class="chart-kicker">Socioeconomic pattern</p>
-          <h3>Disadvantage is associated with higher heat-health risk</h3>
-          <p>Each bar shows mean HHRI for SA2s in that SEIFA decile. Decile 1 = most disadvantaged.</p>
+          <h3>Disadvantage amplifies heat-health risk</h3>
+          <p>Each bar = mean HHRI per SEIFA decile. Decile 1 = most disadvantaged.</p>
         </div>
-        <p class="chart-description">Grouping SA2s by SEIFA decile makes the socioeconomic pattern easier to read than individual points. SA2s in the most disadvantaged deciles consistently record higher average HHRI scores, confirming that socioeconomic conditions shape heat-health risk.</p>
         <div id="scatter_seifa_hhri" class="chart"></div>
-        <p class="chart-note">Takeaway: SA2s in the bottom two SEIFA deciles average notably higher HHRI scores — socioeconomic disadvantage amplifies heat-health risk.</p>
+        <p class="chart-note">Takeaway: The most disadvantaged deciles average notably higher HHRI scores.</p>
       </article>
-    </section>
+    </div>
 
     <p class="section-bridge">Individual drivers explain local scores, but comparing states reveals whether some regions are systematically more exposed than others — and how much variation exists within each state.</p>
 
