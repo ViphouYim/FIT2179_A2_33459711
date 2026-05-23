@@ -345,6 +345,7 @@ p { line-height: 1.45; }
 
 .section05-interpretation {
   gap: 12px;
+  margin-top: 14px;
 }
 
 .section05-look-panel,
@@ -378,14 +379,14 @@ p { line-height: 1.45; }
 }
 
 .section05-footer {
-  margin-top: 4px;
+  margin-top: 18px;
   font-size: .84rem;
   color: var(--muted);
   line-height: 1.5;
 }
 
 .section05-footer p {
-  margin: 0 0 4px;
+  margin: 0 0 6px;
 }
 
 .section05-footer p:last-child {
