@@ -56,7 +56,6 @@
           "title": "HHRI",
           "scale": { "domain": [0, 1] }
         },
-        "color": { "value": "#d4956a" },
         "tooltip": [
           { "field": "state_name", "title": "State" },
           { "field": "hhri_num", "format": ".3f", "title": "HHRI" }
@@ -84,7 +83,7 @@
     },
     "boxplot": {
       "median": { "color": "#8c2d04", "strokeWidth": 2.5 },
-      "box": { "stroke": "#7a4820", "strokeWidth": 1.2 },
+      "box": { "fill": "#d4956a", "fillOpacity": 0.75, "stroke": "#7a4820", "strokeWidth": 1.2 },
       "rule": { "color": "#7a4820", "strokeWidth": 1 },
       "ticks": { "color": "#7a4820" },
       "outliers": { "color": "#8c2d04", "size": 20, "opacity": 0.7 }
