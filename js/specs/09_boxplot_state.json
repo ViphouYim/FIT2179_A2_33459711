@@ -1,37 +1,72 @@
 ﻿{
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 340,
+  "height": 380,
   "title": {
     "text": "Distribution of heat-health risk by state/territory",
-    "subtitle": "Box = IQR (middle 50%) \u00b7 Dark line = median \u00b7 Dots = statistical outliers \u00b7 States sorted highest to lowest risk"
+    "subtitle": "Queensland highlighted \u00b7 States sorted highest to lowest median risk"
   },
   "data": { "url": "data/combined_sa2.csv" },
   "transform": [
     { "filter": "datum.state_name != 'Unknown' && datum.state_name != 'Other Territories' && isValid(datum.hhri)" }
   ],
-  "mark": { "type": "boxplot", "extent": 1.5 },
-  "encoding": {
-    "x": {
-      "field": "state_name", "type": "nominal",
-      "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"],
-      "title": null,
-      "axis": {
-        "labelAngle": 0,
-        "labelFontSize": 11,
-        "labelExpr": "datum.label == 'Northern Territory' ? 'NT' : datum.label == 'South Australia' ? 'SA' : datum.label == 'Queensland' ? 'QLD' : datum.label == 'Tasmania' ? 'TAS' : datum.label == 'Victoria' ? 'VIC' : datum.label == 'Western Australia' ? 'WA' : datum.label == 'New South Wales' ? 'NSW' : datum.label == 'Australian Capital Territory' ? 'ACT' : datum.label"
+  "layer": [
+    {
+      "description": "Boxplot with QLD highlighted",
+      "mark": { "type": "boxplot", "extent": 1.5 },
+      "encoding": {
+        "x": {
+          "field": "state_name", "type": "nominal",
+          "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"],
+          "title": null,
+          "axis": {
+            "labelAngle": 0, "labelFontSize": 11,
+            "labelExpr": "datum.label == 'Northern Territory' ? 'NT' : datum.label == 'South Australia' ? 'SA' : datum.label == 'Queensland' ? 'QLD' : datum.label == 'Tasmania' ? 'TAS' : datum.label == 'Victoria' ? 'VIC' : datum.label == 'Western Australia' ? 'WA' : datum.label == 'New South Wales' ? 'NSW' : datum.label == 'Australian Capital Territory' ? 'ACT' : datum.label"
+          }
+        },
+        "y": {
+          "field": "hhri", "type": "quantitative",
+          "title": "Heat-health risk score",
+          "scale": { "domain": [0, 1] }
+        },
+        "color": {
+          "condition": { "test": "datum.state_name == 'Queensland'", "value": "#c4410c" },
+          "value": "#c8b89a"
+        },
+        "tooltip": [
+          { "field": "state_name", "title": "State" },
+          { "field": "hhri", "format": ".3f", "title": "HHRI" }
+        ]
       }
     },
-    "y": {
-      "field": "hhri", "type": "quantitative",
-      "title": "HHRI",
-      "scale": { "domain": [0, 1] }
-    },
-    "tooltip": [
-      { "field": "state_name", "title": "State" },
-      { "field": "hhri", "format": ".3f", "title": "HHRI" }
-    ]
-  },
+    {
+      "description": "Annotations on QLD box",
+      "data": {
+        "values": [
+          { "state_name": "Queensland", "hhri": 0.671, "label": "median" },
+          { "state_name": "Queensland", "hhri": 0.52,  "label": "middle 50%" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 9,
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+        "color": "#2b1a10",
+        "dx": 34,
+        "align": "left",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "state_name", "type": "nominal",
+          "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"]
+        },
+        "y": { "field": "hhri", "type": "quantitative" },
+        "text": { "field": "label" }
+      }
+    }
+  ],
   "background": "transparent",
   "config": {
     "view": { "stroke": null },
@@ -52,7 +87,7 @@
     },
     "boxplot": {
       "median": { "color": "#8c2d04", "strokeWidth": 2.5 },
-      "box": { "fill": "#d4956a", "fillOpacity": 0.75, "stroke": "#7a4820", "strokeWidth": 1.2 },
+      "box": { "stroke": "#7a4820", "strokeWidth": 1.2 },
       "rule": { "color": "#7a4820", "strokeWidth": 1 },
       "ticks": { "color": "#7a4820" },
       "outliers": { "color": "#8c2d04", "size": 20, "opacity": 0.7 }
