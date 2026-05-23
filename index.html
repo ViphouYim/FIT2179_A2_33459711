@@ -237,34 +237,39 @@
 
     <section class="section-title">
       <span>05</span><h2>Final focus: the highest-risk areas</h2>
-      <p>The final focus returns to the highest-risk SA2s and shows which risk components drive their scores.</p>
-    </section>
-    <section class="grid section05-layout">
-      <article class="panel chart-card section05-chart-card"><div class="chart-heading"><p class="chart-kicker">Final synthesis</p><h3>The highest-risk SA2s are driven by different combinations of pressures</h3><p>Darker cells indicate higher component scores. Compare rows to see how risk composition varies across the top 10 SA2s.</p></div><p class="chart-description">Each row is one SA2; each column is a risk component. Darker shading indicates a higher score on that component. Reading across a row reveals which pressures combine to make that area high-risk — and why a single national response would be insufficient.</p><div id="heatmap_top_components" class="chart"></div><p class="chart-note">Takeaway: Priority areas are not high-risk for one reason alone. Most combine high exposure with elevated vulnerability, housing, or health scores — requiring place-specific interventions rather than generic national responses.</p></article>
-      <aside class="panel section05-side-text">
-        <h3>How to read this chart</h3>
-        <p>Darker cells indicate higher component scores. Compare each row to see how risk composition changes across the top 10 SA2s.</p>
-        <p>Most high-risk areas do not score high on every component. Instead, each region shows a different mix of exposure, housing, health, vulnerability, and adaptive capacity.</p>
-        <p><strong>Why this matters:</strong> targeted local responses work better than a single nationwide solution.</p>
-      </aside>
+      <p>The final section returns to the highest-risk SA2s and shows which risk components drive their scores.</p>
     </section>
 
-    <article class="panel narrative-text conclusion">
-      <h3>What this means</h3>
-      <p>Heat-health risk is not simply a map of hot places. The highest-risk SA2s are places where heat exposure combines with social vulnerability, housing condition risk, health status risk and limited adaptive capacity. Mapping these factors together makes the risk easier to see, compare and act on.</p>
+    <article class="panel chart-card section05-full-chart">
+      <div class="chart-heading">
+        <p class="chart-kicker">Final synthesis</p>
+        <h3>The highest-risk SA2s are driven by different combinations of pressure</h3>
+        <p>Each row is a high-risk SA2 and each column is a risk component. Darker cells indicate stronger component scores.</p>
+      </div>
+      <div id="heatmap_top_components" class="chart"></div>
     </article>
-    <article class="panel narrative-text metadata-panel">
-      <h3>Domain, Audience, and Method</h3>
-      <p><strong>Domain:</strong> climate-related heat-health risk in Australian SA2 regions.</p>
-      <p><strong>Who:</strong> public health planners, local councils, emergency managers, and policy audiences.</p>
-      <p><strong>What:</strong> a multi-chart dashboard integrating national burden, spatial risk, drivers, and top-risk profiles.</p>
-      <p><strong>Why:</strong> to identify where heat-health risk is highest and which factors should be targeted first.</p>
-      <p><strong>How:</strong> ACS/ABS HHRI scores joined to ABS SA2 2021 boundary files at the SA2 code level. Data cleaned and aggregated in Python; visualisations built in Vega-Lite v5 and embedded via Vega-Embed. All chart logic, data joins, and analytical interpretations were authored and verified by the student.</p>
-    </article>
-    <footer class="panel footer-panel">
-      <p><strong>Author:</strong> Viphou Yim (33459711) · <strong>Unit:</strong> FIT2179 Data Visualisation 2 · <strong>Date:</strong> May 2026 · <strong>Built with:</strong> Vega-Lite</p>
-      <p><strong>Primary sources:</strong> ACS/ABS Heat-Health Risk Index, ABS SEIFA, ABS Regional Population, AIHW Extreme Weather Injuries.</p>
-      <p><strong>AI acknowledgement:</strong> Language and layout refinement supported by GitHub Copilot (AI-assisted); data preparation, chart logic, and final interpretation reviewed and verified by the author.</p>
+
+    <div class="grid two-col section05-interpretation">
+      <div class="panel section05-look-panel">
+        <h3>What to look for</h3>
+        <ul>
+          <li>Darker cells = stronger component score</li>
+          <li>Rows show different risk profiles across SA2s</li>
+          <li>Repeated dark columns reveal common drivers</li>
+        </ul>
+      </div>
+      <div class="panel section05-meaning-panel">
+        <h3>What this means</h3>
+        <p>Heat-health risk is not simply a map of hot places. It is a combined measure of exposure and social conditions — which is why local planning needs to consider both climate and community vulnerability.</p>
+        <p class="chart-note">The highest-risk SA2s do not share one risk profile. Most combine high exposure with vulnerability, housing, health or adaptive-capacity pressures, supporting targeted local responses.</p>
+      </div>
+    </div>
+
+    <footer class="panel footer-panel section05-footer">
+      <p><strong>Author:</strong> Viphou Yim (33459711) · <strong>Unit:</strong> FIT2179 Data Visualisation 2 · <strong>Date:</strong> May 2026 · <strong>Tools:</strong> Vega-Lite · HTML/CSS/JS</p>
+      <p><strong>Domain:</strong> climate-related heat-health risk in Australian SA2 regions. <strong>Audience:</strong> public health planners, local councils and emergency managers. <strong>Method:</strong> ACS/ABS HHRI joined to ABS SA2 boundaries; visualised in Vega-Lite v5.</p>
+      <p><strong>Sources:</strong> ACS/ABS Heat-Health Risk Index · ABS SEIFA · ABS Regional Population · AIHW Extreme Weather Injuries.</p>
+      <p class="footer-ack"><strong>AI acknowledgement:</strong> Language and layout refinement supported by GitHub Copilot (AI-assisted); data preparation, chart logic, and final interpretation reviewed and verified by the author.</p>
     </footer>
   </main>
   <script src="js/main.js"></script>

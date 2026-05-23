@@ -38,33 +38,6 @@
           { "field": "hhri", "format": ".3f", "title": "HHRI" }
         ]
       }
-    },
-    {
-      "description": "Annotations on QLD box",
-      "data": {
-        "values": [
-          { "state_name": "Queensland", "hhri": 0.671, "label": "median" },
-          { "state_name": "Queensland", "hhri": 0.52,  "label": "middle 50%" }
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "fontSize": 9,
-        "fontStyle": "italic",
-        "fontWeight": "bold",
-        "color": "#2b1a10",
-        "dx": 34,
-        "align": "left",
-        "baseline": "middle"
-      },
-      "encoding": {
-        "x": {
-          "field": "state_name", "type": "nominal",
-          "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"]
-        },
-        "y": { "field": "hhri", "type": "quantitative" },
-        "text": { "field": "label" }
-      }
     }
   ],
   "background": "transparent",
@@ -89,7 +62,7 @@
       "median": { "color": "#8c2d04", "strokeWidth": 2.5 },
       "box": { "stroke": "#7a4820", "strokeWidth": 1.2 },
       "rule": { "color": "#7a4820", "strokeWidth": 1 },
-      "ticks": { "color": "#7a4820" },
+      "ticks": { "color": "#7a4820", "size": 6 },
       "outliers": { "color": "#8c2d04", "size": 20, "opacity": 0.7 }
     }
   }

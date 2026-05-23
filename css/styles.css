@@ -337,6 +337,61 @@ p { line-height: 1.45; }
 .section05-side-text p:last-child {
   margin-bottom: 0;
 }
+
+/* Section 05 redesigned layout */
+.section05-full-chart {
+  overflow: hidden;
+}
+
+.section05-interpretation {
+  gap: 12px;
+}
+
+.section05-look-panel,
+.section05-meaning-panel {
+  padding: 16px 20px;
+}
+
+.section05-look-panel h3,
+.section05-meaning-panel h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.section05-look-panel ul {
+  margin: 0;
+  padding-left: 1.3em;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.section05-meaning-panel p {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.section05-meaning-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.section05-footer {
+  margin-top: 4px;
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.section05-footer p {
+  margin: 0 0 4px;
+}
+
+.section05-footer p:last-child {
+  margin-bottom: 0;
+}
+
 .section01-grid {
   grid-template-columns: 1fr;
   align-items: stretch;

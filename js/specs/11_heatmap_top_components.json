@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": "container",
-  "height": 320,
+  "height": 440,
   "data": {
     "url": "data/top10_components_long.csv"
   },
@@ -15,7 +15,8 @@
       "type": "nominal",
       "title": null,
       "axis": {
-        "labelAngle": -30
+        "labelAngle": 0,
+        "labelExpr": "datum.label == 'Adaptive capacity' ? 'Adaptive' : datum.label == 'Health status' ? 'Health' : datum.label == 'Heat exposure' ? 'Exposure' : datum.label == 'Housing condition' ? 'Housing' : datum.label"
       }
     },
     "y": {
@@ -31,11 +32,11 @@
       "legend": {
         "orient": "bottom",
         "direction": "horizontal",
-        "gradientLength": 180
+        "gradientLength": 240
       },
       "scale": {
         "domain": [0, 1],
-        "range": ["#f5f1e8", "#fee391", "#fe9929", "#d95f0e", "#8b4513"]
+        "range": ["#fdf6ec", "#fdd49e", "#f28e2b", "#c4410c", "#8c2d04"]
       }
     },
     "tooltip": [
