@@ -44,7 +44,7 @@
       "title": "Mean HHRI",
       "scale": {
         "domain": [0, 1],
-        "range": ["#f5f1e8", "#fee391", "#fe9929", "#d95f0e", "#8b4513"]
+        "range": ["#fff7ec", "#fdd49e", "#f16913", "#7f2704"]
       },
       "legend": {
         "orient": "bottom",

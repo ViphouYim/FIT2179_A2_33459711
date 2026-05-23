@@ -51,7 +51,7 @@
           "legend": null,
           "scale": {
             "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "range": ["#8d3f18","#b85020","#d66a1f","#e8883a","#f3a14a","#fabb6e","#fcd090","#fde4b5","#fef1d8","#fdf7ee"]
+            "range": ["#8c2d04","#8c2d04","#d4956a","#d4956a","#d4956a","#d4956a","#d4956a","#d4956a","#d4956a","#d4956a"]
           }
         },
         "tooltip": [
@@ -67,15 +67,7 @@
         "y": { "field": "decile", "type": "ordinal", "sort": "ascending" },
         "x": { "field": "mean_hhri", "type": "quantitative" },
         "text": { "field": "mean_hhri", "format": ".3f" },
-        "color": {
-          "field": "decile",
-          "type": "ordinal",
-          "legend": null,
-          "scale": {
-            "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            "range": ["#3a1508","#4e2010","#5e3010","#603020","#604020","#5a4218","#484218","#383818","#303018","#282818"]
-          }
-        }
+        "color": { "value": "#2b2520" }
       }
     }
   ],
