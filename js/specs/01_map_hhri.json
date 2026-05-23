@@ -4,7 +4,7 @@
   "height": 600,
   "title": {
     "text": "Heat-Health Risk Index by SA2",
-    "subtitle": "White and light beige areas indicate no HHRI data"
+    "subtitle": "Warm-grey areas are SA2s not included in the analysis \u00b7 Hover any region for details"
   },
   "data": {
     "url": "data/sa2_2021_analysis_australia.geojson",
@@ -62,6 +62,21 @@
         "fill": "#f8f1e6",
         "stroke": "#ede4d7",
         "strokeWidth": 0.12
+      }
+    },
+    {
+      "description": "No-data SA2s: visible fill + tooltip",
+      "mark": { "type": "geoshape", "stroke": "#cfc3b4", "strokeWidth": 0.15 },
+      "transform": [
+        { "filter": "!isFinite(datum.hhri_num)" },
+        { "calculate": "'Not included in analysis'", "as": "status" }
+      ],
+      "encoding": {
+        "color": { "value": "#d6cdc1" },
+        "tooltip": [
+          { "field": "properties.SA2_NAME21", "title": "SA2" },
+          { "field": "status", "title": "Status" }
+        ]
       }
     },
     {

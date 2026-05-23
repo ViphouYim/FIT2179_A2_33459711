@@ -2,10 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 340,
-  "title": {
-    "text": "Older populations add planning priority",
-    "subtitle": "Each bubble = one SA2 \u00b7 Size = population \u00b7 Colour = HHRI risk band \u00b7 Upper-right = priority zone \u00b7 Hover for detail"
-  },
   "data": { "url": "data/combined_sa2.csv" },
   "params": [
     {
@@ -86,7 +82,9 @@
           "scale": { "range": [15, 700], "type": "sqrt" },
           "legend": {
             "title": "Population", "orient": "bottom",
-            "direction": "horizontal", "symbolFillColor": "#999"
+            "direction": "horizontal", "symbolFillColor": "#999",
+            "values": [5000, 10000, 20000],
+            "symbolLimit": 3
           }
         },
         "color": {
