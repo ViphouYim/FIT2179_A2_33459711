@@ -6,6 +6,9 @@
   "data": {
     "url": "data/state_components_long.csv"
   },
+  "transform": [
+    { "filter": "datum.state_name != 'Unknown' && datum.state_name != 'Other Territories'" }
+  ],
   "mark": {
     "type": "bar"
   },

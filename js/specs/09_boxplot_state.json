@@ -9,9 +9,8 @@
   "data": { "url": "data/combined_sa2.csv" },
   "transform": [
     {
-      "filter": "datum.state_name != 'Unknown' && datum.state_name != 'Other Territories' && isFinite(toNumber(datum.hhri))"
+      "filter": "datum.state_name != 'Unknown' && datum.state_name != 'Other Territories' && isValid(datum.hhri)"
     },
-    { "calculate": "toNumber(datum.hhri)", "as": "hhri_num" },
     { "calculate": "random()", "as": "rand" }
   ],
   "layer": [
@@ -21,7 +20,7 @@
       "encoding": {
         "x": {
           "field": "state_name", "type": "nominal",
-          "sort": { "op": "median", "field": "hhri_num", "order": "descending" },
+          "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"],
           "title": null,
           "axis": { "labelAngle": -32, "labelFontSize": 10 }
         },
@@ -30,14 +29,14 @@
           "scale": { "range": [-13, 13] }
         },
         "y": {
-          "field": "hhri_num", "type": "quantitative",
+          "field": "hhri", "type": "quantitative",
           "title": "HHRI",
           "scale": { "domain": [0, 1] }
         },
         "tooltip": [
           { "field": "region_name", "title": "SA2" },
           { "field": "state_name", "title": "State" },
-          { "field": "hhri_num", "format": ".3f", "title": "HHRI" }
+          { "field": "hhri", "format": ".3f", "title": "HHRI" }
         ]
       }
     },
@@ -47,18 +46,18 @@
       "encoding": {
         "x": {
           "field": "state_name", "type": "nominal",
-          "sort": { "op": "median", "field": "hhri_num", "order": "descending" },
+          "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"],
           "title": null,
           "axis": { "labelAngle": -32, "labelFontSize": 10 }
         },
         "y": {
-          "field": "hhri_num", "type": "quantitative",
+          "field": "hhri", "type": "quantitative",
           "title": "HHRI",
           "scale": { "domain": [0, 1] }
         },
         "tooltip": [
           { "field": "state_name", "title": "State" },
-          { "field": "hhri_num", "format": ".3f", "title": "HHRI" }
+          { "field": "hhri", "format": ".3f", "title": "HHRI" }
         ]
       }
     }
