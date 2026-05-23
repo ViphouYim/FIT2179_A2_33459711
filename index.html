@@ -251,25 +251,37 @@
 
     <div class="grid two-col section05-interpretation">
       <div class="panel section05-look-panel">
-        <h3>What to look for</h3>
-        <ul>
-          <li>Darker cells = stronger component score</li>
-          <li>Rows show different risk profiles across SA2s</li>
-          <li>Repeated dark columns reveal common drivers</li>
+        <h3>How to read this chart</h3>
+        <ul class="section05-read-list">
+          <li><strong>Rows</strong> = highest-risk SA2s</li>
+          <li><strong>Columns</strong> = risk components</li>
+          <li><strong>Darker cells</strong> = stronger component score</li>
         </ul>
+        <p class="section05-look-label">Look for:</p>
+        <ul class="section05-read-list">
+          <li>rows with several dark cells</li>
+          <li>repeated dark columns (common drivers)</li>
+          <li>different patterns across rows (varied profiles)</li>
+        </ul>
+        <p class="section05-look-note">Most high-risk SA2s combine exposure with vulnerability, housing, health or adaptive-capacity pressures.</p>
       </div>
       <div class="panel section05-meaning-panel">
         <h3>What this means</h3>
-        <p>Heat-health risk is not simply a map of hot places. It is a combined measure of exposure and social conditions — which is why local planning needs to consider both climate and community vulnerability.</p>
-        <p class="chart-note">The highest-risk SA2s do not share one risk profile. Most combine high exposure with vulnerability, housing, health or adaptive-capacity pressures, supporting targeted local responses.</p>
+        <p>The highest-risk SA2s are not just the hottest places. They are areas where heat exposure combines with vulnerability, housing, health or adaptive-capacity pressures — supporting targeted local responses rather than one national solution.</p>
+        <p class="section05-insight"><strong>Final insight:</strong> Heat-health risk is not evenly distributed and not driven by heat alone. The highest-risk areas need local responses that address both environmental exposure and social vulnerability.</p>
       </div>
     </div>
 
     <footer class="panel footer-panel section05-footer">
-      <p><strong>Author:</strong> Viphou Yim (33459711) · <strong>Unit:</strong> FIT2179 Data Visualisation 2 · <strong>Date:</strong> May 2026 · <strong>Tools:</strong> Vega-Lite · HTML/CSS/JS</p>
-      <p><strong>Domain:</strong> climate-related heat-health risk in Australian SA2 regions. <strong>Audience:</strong> public health planners, local councils and emergency managers. <strong>Method:</strong> ACS/ABS HHRI joined to ABS SA2 boundaries; visualised in Vega-Lite v5.</p>
-      <p><strong>Sources:</strong> ACS/ABS Heat-Health Risk Index · ABS SEIFA · ABS Regional Population · AIHW Extreme Weather Injuries.</p>
-      <p class="footer-ack"><strong>AI acknowledgement:</strong> Language and layout refinement supported by GitHub Copilot (AI-assisted); data preparation, chart logic, and final interpretation reviewed and verified by the author.</p>
+      <div class="footer-meta-row">
+        <span><strong>Author:</strong> Viphou Yim (33459711)</span>
+        <span><strong>Unit:</strong> FIT2179 Data Visualisation 2</span>
+        <span><strong>Date:</strong> May 2026</span>
+        <span><strong>Tools:</strong> Vega-Lite · HTML/CSS/JS</span>
+      </div>
+      <p><strong>Domain:</strong> climate-related health risk in Australian SA2 regions. <strong>Audience:</strong> public health planners, local councils and emergency managers. <strong>Method:</strong> HHRI, SEIFA, population and boundary data joined by SA2 code and visualised in Vega-Lite.</p>
+      <p><strong>Sources:</strong> ACS/ABS HHRI · ABS SEIFA · ABS Regional Population · AIHW Extreme Weather Injuries</p>
+      <p class="footer-ack"><strong>AI acknowledgement:</strong> Language and layout refinement supported by GitHub Copilot; data preparation, chart logic, and interpretation verified by the author.</p>
     </footer>
   </main>
   <script src="js/main.js"></script>

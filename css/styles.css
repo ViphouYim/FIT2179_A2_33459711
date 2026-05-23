@@ -359,12 +359,31 @@ p { line-height: 1.45; }
   font-size: 1rem;
 }
 
-.section05-look-panel ul {
-  margin: 0;
-  padding-left: 1.3em;
+.section05-read-list {
+  margin: 0 0 0 0;
+  padding-left: 1.2em;
   color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.6;
+  font-size: .88rem;
+  line-height: 1.65;
+}
+
+.section05-look-label {
+  margin: 10px 0 3px;
+  font-size: .82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink);
+}
+
+.section05-look-note {
+  margin: 10px 0 0;
+  font-size: .84rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.45;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
 }
 
 .section05-meaning-panel p {
@@ -376,6 +395,24 @@ p { line-height: 1.45; }
 
 .section05-meaning-panel p:last-child {
   margin-bottom: 0;
+}
+
+.section05-insight {
+  padding: 10px 13px;
+  background: #f4ece0;
+  border-left: 3px solid var(--accent);
+  font-size: .88rem;
+  line-height: 1.5;
+  color: var(--ink) !important;
+  margin-top: 10px !important;
+}
+
+.footer-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 20px;
+  margin-bottom: 8px;
+  font-size: .88rem;
 }
 
 .section05-footer {
