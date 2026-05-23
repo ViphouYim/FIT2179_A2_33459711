@@ -682,7 +682,7 @@ p { line-height: 1.45; }
 
 .section03-main-row {
   grid-template-columns: minmax(210px, 0.36fr) minmax(0, 0.64fr);
-  align-items: stretch;
+  align-items: start;
 }
 .section03-driver-panel {
   padding: 18px;
