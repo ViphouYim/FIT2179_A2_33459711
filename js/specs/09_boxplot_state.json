@@ -16,7 +16,11 @@
       "field": "state_name", "type": "nominal",
       "sort": ["Northern Territory", "South Australia", "Queensland", "Tasmania", "Victoria", "Western Australia", "New South Wales", "Australian Capital Territory"],
       "title": null,
-      "axis": { "labelAngle": -32, "labelFontSize": 10 }
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 11,
+        "labelExpr": "datum.label == 'Northern Territory' ? 'NT' : datum.label == 'South Australia' ? 'SA' : datum.label == 'Queensland' ? 'QLD' : datum.label == 'Tasmania' ? 'TAS' : datum.label == 'Victoria' ? 'VIC' : datum.label == 'Western Australia' ? 'WA' : datum.label == 'New South Wales' ? 'NSW' : datum.label == 'Australian Capital Territory' ? 'ACT' : datum.label"
+      }
     },
     "y": {
       "field": "hhri", "type": "quantitative",
