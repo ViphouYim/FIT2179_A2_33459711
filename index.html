@@ -19,9 +19,8 @@
       </div>
       <div class="hero-copy">
         <div class="hero-text">
-          <p class="hero-lead">Extreme heat is not just a weather problem.</p>
-          <p>Heat-health risk increases where high exposure overlaps with housing pressure, poorer health, older populations and socioeconomic vulnerability.</p>
-          <p>This dashboard is designed for public health planners, emergency managers, and local councils seeking to identify where targeted heat interventions are most needed.</p>
+          <p class="hero-lead">Extreme heat is Australia's largest weather-related injury burden — but the risk is not shared equally.</p>
+          <p>Risk is highest where heat exposure overlaps with housing pressure, poorer health, older populations and socioeconomic disadvantage.</p>
         </div>
         <div class="hero-mini">
           <p class="mini-kicker">RISK INDEX COMPONENTS</p>
@@ -36,17 +35,17 @@
       </div>
       <div class="hero-metrics">
         <p class="metrics-title">KEY FIGURES</p>
+        <div class="evidence-row highlight">
+          <span class="evidence-number">78%</span>
+          <span class="evidence-label">of all extreme-weather injury hospitalisations were heat-related</span>
+        </div>
+        <div class="evidence-row">
+          <span class="evidence-number">7,104</span>
+          <span class="evidence-label">heat-related injury hospitalisations recorded</span>
+        </div>
         <div class="evidence-row">
           <span class="evidence-number">2,473</span>
-          <span class="evidence-label">SA2 regions mapped</span>
-        </div>
-        <div class="evidence-row highlight">
-          <span class="evidence-number">7,104</span>
-          <span class="evidence-label">Extreme-heat injury hospitalisations</span>
-        </div>
-        <div class="evidence-row">
-          <span class="evidence-number">0–1</span>
-          <span class="evidence-label">HHRI scale: higher score = higher risk</span>
+          <span class="evidence-label">SA2 regions mapped across Australia</span>
         </div>
       </div>
       <p class="hero-source">Sources: ACS/ABS Heat-Health Risk Index, ABS SEIFA, ABS Regional Population, AIHW extreme weather injury data, ABS SA2 boundaries.</p>
@@ -63,9 +62,8 @@
         <aside class="panel section01-keyfindings">
           <p class="chart-kicker">Key finding</p>
           <h3>Heat is the dominant weather-health burden</h3>
-          <p>Extreme heat records 7,104 injury hospitalisations, far above bushfire, cold, rain and storms.</p>
-          <p>Heat represents 78% of listed extreme-weather injury hospitalisations.</p>
-          <p>Several years exceed 1,000 cases, showing this is a recurring health burden.</p>
+          <p>Extreme heat records 7,104 injury hospitalisations — far above bushfire, cold, rain and storms combined.</p>
+          <p>Several years exceed 1,000 cases, confirming this is a recurring and serious health burden.</p>
         </aside>
         <article class="panel chart-card section01-bar">
           <div class="chart-heading">
@@ -101,7 +99,7 @@
       </div>
     </section>
 
-    <p class="section-bridge">With heat established as the dominant weather-health burden, the next step is to map where heat-health risk is concentrated.</p>
+    <p class="section-bridge">Heat is the largest weather-health burden nationally. The next question is whether this risk is evenly distributed across Australia — and who carries the greatest share.</p>
 
     <section class="section-title">
       <span>02</span><h2>Where the risk is concentrated</h2>
@@ -112,15 +110,19 @@
         <div class="chart-heading">
           <p class="chart-kicker">Spatial pattern</p>
           <h3>Heat-health risk is not evenly spread</h3>
-          <p>Hover each SA2 to inspect local risk conditions and compare overall HHRI scores across regions.</p>
+          <p>Hover each SA2 to inspect local risk conditions and compare HHRI scores across regions.</p>
         </div>
-        <p class="chart-description">The SA2 map shows the overall Heat-Health Risk Index, where darker areas have higher relative risk.</p>
         <div id="map_hhri" class="chart map-chart"></div>
-        <p class="chart-note">Takeaway: The map should not be read as temperature alone. It combines heat exposure with social, housing, health and adaptive-capacity factors.</p>
+        <p class="chart-note">Takeaway: HHRI reflects compound risk — not temperature alone.</p>
       </article>
       <aside class="panel explainer-card">
-        <h3>How to read this map</h3>
-        <p>Darker SA2s have higher relative heat-health risk. The score combines heat exposure, social and housing vulnerability, health status and adaptive capacity, so it should not be read as temperature alone.</p>
+        <h3>Read the map in three steps</h3>
+        <ol class="map-steps">
+          <li>Look for dark clusters in northern and remote Australia</li>
+          <li>Hover any SA2 to see its name and HHRI score</li>
+          <li>Compare component drivers to understand what raises risk</li>
+        </ol>
+        <p class="explainer-note">HHRI reflects compound risk — not temperature alone. Darker = higher relative heat-health risk.</p>
         <ul>
           <li>Exposure: local heat and environmental pressure</li>
           <li>Vulnerability: housing, health and social disadvantage</li>
@@ -135,13 +137,12 @@
           </ul>
           <p class="excluded-note">Warm-grey areas on the map show these SA2s. Hover any grey region to confirm its name and status.</p>
         </div>
-        <p><strong>Use this as a guide:</strong> first scan for high-risk clusters, then hover to identify which component is driving risk in each SA2.</p>
       </aside>
     </section>
 
     <section class="grid two-col">
-      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Hotspot ranking</p><h3>The highest-risk SA2s are concentrated in just three states</h3><p>A ranked lollipop chart makes the map easier to interrogate.</p></div><p class="chart-description">Each dot is one SA2, coloured by state. The top 10 highest-risk SA2s are all drawn from Queensland, Western Australia, and the Northern Territory — confirming the geographic concentration visible in the map.</p><div id="top10_hhri" class="chart"></div><p class="chart-note">Takeaway: All ten highest-risk SA2s are in QLD, WA, or NT, confirming that compound risk is strongly concentrated in northern and remote Australia.</p></article>
-      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Risk distribution</p><h3>Queensland and WA have the highest share of top-risk SA2s</h3><p>100% stacked bars show how SA2s fall across five risk quintiles within each state or territory.</p></div><p class="chart-description">A larger rightmost (darkest) segment indicates a higher proportion of that state's SA2s fall in the highest risk band. Compare across states to identify which regions contain more concentrated risk.</p><div id="histogram_hhri" class="chart"></div><p class="chart-note">Takeaway: Queensland and Western Australia have a noticeably larger share of SA2s in the highest risk quintile — risk is geographically concentrated, not evenly distributed.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Hotspot ranking</p><h3>The highest-risk SA2s are concentrated in just three states</h3><p>Each dot is one SA2, coloured by state. All top-10 SA2s fall in QLD, WA, or NT.</p></div><div id="top10_hhri" class="chart"></div><p class="chart-note">Takeaway: All ten highest-risk SA2s are in QLD, WA, or NT, confirming that compound risk is strongly concentrated in northern and remote Australia.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Risk distribution</p><h3>Queensland and WA have the highest share of top-risk SA2s</h3><p>100% stacked bars compare each state’s SA2s across five HHRI risk bands. A larger darkest segment = more SA2s at the highest risk level.</p></div><div id="histogram_hhri" class="chart"></div><p class="chart-note">Takeaway: Queensland and Western Australia have a noticeably larger share of SA2s in the highest risk quintile — risk is geographically concentrated, not evenly distributed.</p></article>
     </section>
 
     <p class="section-bridge">Knowing where risk is highest raises the question of why. The following charts decompose the HHRI into its five components to reveal which specific pressures are driving local scores.</p>
@@ -150,13 +151,13 @@
       <div class="section-title-main">
         <span>03 —</span><h2>What drives heat-health risk?</h2>
       </div>
-      <p class="section-title-intro">Heat-health risk is highest where multiple pressures overlap. This section separates the index into exposure, vulnerability, housing, health, age and socioeconomic conditions to show which combinations create the strongest local concern.</p>
+      <p class="section-title-intro">Heat-health risk is highest where multiple pressures overlap. The charts below reveal which specific drivers create compound risk in each SA2.</p>
     </section>
 
     <div class="panel section03-intro-bar">
       <div class="section03-intro-left">
         <p class="mini-kicker">Compound pressure</p>
-        <p>High-risk SA2s are not just hot places. Risk is highest where heat exposure coincides with social vulnerability, housing pressure, poor health, older populations and socioeconomic disadvantage — no single factor alone produces the highest scores.</p>
+        <p>High HHRI occurs when exposure overlaps with social and health vulnerability — no single factor alone produces the highest scores.</p>
       </div>
       <div class="section03-intro-right">
         <p class="mini-kicker">Risk increases when these overlap</p>
@@ -176,21 +177,19 @@
       </div>
     </div>
 
-    <article class="panel chart-card section03-hero-chart">
-      <div class="chart-heading">
-        <p class="chart-kicker">Main driver — quadrant scatterplot</p>
-        <h3>Exposure becomes more serious when vulnerability is high</h3>
-        <p>Each dot is one SA2. Colour shows HHRI risk score. Shaded zones mark the four quadrant types. Use the dropdown to explore states.</p>
-      </div>
-      <p class="chart-description">The upper-right quadrant identifies SA2s where high heat exposure coincides with high social vulnerability — the clearest compound-risk pattern. NT and QLD SA2s dominate this zone, but Western Australia also contributes concentrated clusters.</p>
-      <div id="scatter_exposure_vulnerability" class="chart vega-embed"></div>
-      <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
-    </article>
-
-    <div class="grid two-col section03-pair-row">
+    <div class="grid two-col section03-drivers-grid">
       <article class="panel chart-card">
         <div class="chart-heading">
-          <p class="chart-kicker">Dual pressure</p>
+          <p class="chart-kicker">Exposure vs vulnerability</p>
+          <h3>Exposure becomes more serious when vulnerability is high</h3>
+          <p>Each dot is one SA2. Colour shows HHRI. Shaded zones mark four quadrant types. Use the dropdown to filter by state.</p>
+        </div>
+        <div id="scatter_exposure_vulnerability" class="chart vega-embed"></div>
+        <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
+      </article>
+      <article class="panel chart-card">
+        <div class="chart-heading">
+          <p class="chart-kicker">Housing vs health</p>
           <h3>Housing and health pressures compound risk</h3>
           <p>Darker cells = higher mean HHRI. Upper-right = where both dimensions drive the highest risk.</p>
         </div>
@@ -199,39 +198,44 @@
       </article>
       <article class="panel chart-card">
         <div class="chart-heading">
-          <p class="chart-kicker">Population structure</p>
-          <h3>Older populations add planning priority</h3>
-          <p>Bubble size = population. Colour = HHRI risk band. Upper-right = priority zone.</p>
+          <p class="chart-kicker">Age and exposure</p>
+          <h3>Older populations in hot areas face compounded risk</h3>
+          <p>Bubble size = population. Colour = HHRI risk band. Upper-right = highest planning priority.</p>
         </div>
         <div id="bubble_older_heat" class="chart"></div>
         <p class="chart-note">Takeaway: Large older populations in high-exposure areas warrant targeted planning attention.</p>
       </article>
+      <article class="panel chart-card">
+        <div class="chart-heading">
+          <p class="chart-kicker">Socioeconomic disadvantage</p>
+          <h3>Disadvantaged areas face higher average heat-health risk</h3>
+          <p>Each bar = mean HHRI per SEIFA decile. Decile 1 = most disadvantaged.</p>
+        </div>
+        <div id="scatter_seifa_hhri" class="chart"></div>
+        <p class="chart-note">Takeaway: The most disadvantaged deciles average notably higher HHRI scores — socioeconomic disadvantage and heat-health risk are closely linked.</p>
+      </article>
     </div>
 
-    <article class="panel chart-card section03-seifa-row">
-      <div class="chart-heading">
-        <p class="chart-kicker">Socioeconomic pattern</p>
-        <h3>Disadvantage amplifies heat-health risk</h3>
-        <p>Each bar = mean HHRI per SEIFA decile. Decile 1 = most disadvantaged.</p>
-      </div>
-      <div id="scatter_seifa_hhri" class="chart"></div>
-      <p class="chart-note">Takeaway: The most disadvantaged deciles average notably higher HHRI scores — socioeconomic disadvantage and heat-health risk are closely linked.</p>
-    </article>
-
-    <p class="section-bridge">Individual drivers explain local scores, but comparing states reveals whether some regions are systematically more exposed than others — and how much variation exists within each state.</p>
+    <p class="section-bridge">Individual drivers explain local scores. The next question is whether some states are systematically more exposed than others — and how much variation exists within each state.</p>
 
     <section class="section-title">
-      <span>04</span><h2>Comparing places</h2>
-      <p>State summaries reveal broad patterns, while the SA2 map shows local variation.</p>
+      <div class="section-title-main">
+        <span>04 —</span><h2>Risk levels differ sharply between states</h2>
+      </div>
+      <p class="section-title-intro">State summaries reveal broad patterns, but large within-state variation means individual SA2 data always matters.</p>
     </section>
     <section class="grid two-col">
-      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Component mix</p><h3>Exposure dominates in the NT and WA; other states show more balanced profiles</h3><p>Normalised bars show the average relative contribution of each risk component by state.</p></div><p class="chart-description">The 100% normalised bars reveal that the Northern Territory’s risk is dominated by heat exposure, while states like Victoria and Tasmania show a more even distribution across housing, health, and vulnerability components.</p><div id="state_components" class="chart"></div><p class="chart-note">Takeaway: The Northern Territory records the highest relative exposure component of any state or territory. New South Wales and Victoria show more balanced mixes — meaning targeted responses will need to differ by region.</p></article>
-      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Within-state variation</p><h3>State averages hide large local differences</h3><p>Box plots show how HHRI scores vary across SA2s within each state. Wider boxes and longer whiskers indicate greater local variation.</p></div><p class="chart-description">Each box shows the middle 50% of SA2 scores. The dark line marks the median and dots show statistical outliers. Queensland is highlighted — it shows one of the widest spreads, meaning its local areas differ strongly from each other.</p><div id="boxplot_state" class="chart"></div><p class="chart-note">Takeaway: State-level averages can hide sharp local differences. This is why SA2-level mapping remains essential for identifying where heat-health risk is concentrated.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Component mix</p><h3>NT and WA risk profiles are driven more strongly by exposure</h3><p>Normalised bars show the average relative contribution of each risk component by state.</p></div><div id="state_components" class="chart"></div><p class="chart-note">Takeaway: The Northern Territory records the highest relative exposure component of any state or territory. NSW and Victoria show more balanced mixes — targeted responses will need to differ by region.</p></article>
+      <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">Within-state variation</p><h3>State averages hide large local differences</h3><p>Box plots show how HHRI scores vary across SA2s within each state. Wider boxes and longer whiskers indicate greater local variation.</p></div><div id="boxplot_state" class="chart"></div><p class="chart-note">Takeaway: State-level averages can hide sharp local differences. This is why SA2-level mapping remains essential for identifying where heat-health risk is concentrated.</p></article>
     </section>
 
+    <p class="section-bridge">State and component analysis reveals the structure of risk. The final section focuses on the highest-risk SA2s to show what drives their scores — and what types of response each may need.</p>
+
     <section class="section-title">
-      <span>05</span><h2>Final focus: the highest-risk areas</h2>
-      <p>The final section returns to the highest-risk SA2s and shows which risk components drive their scores.</p>
+      <div class="section-title-main">
+        <span>05 —</span><h2>The highest-risk communities need targeted local responses</h2>
+      </div>
+      <p class="section-title-intro">High-risk SA2s are driven by different combinations of pressure — which means one national solution cannot address all of them.</p>
     </section>
 
     <article class="panel chart-card section05-full-chart">
@@ -260,9 +264,24 @@
         <p class="section05-look-note">Most high-risk SA2s combine exposure with vulnerability, housing, health or adaptive-capacity pressures.</p>
       </div>
       <div class="panel section05-meaning-panel">
-        <h3>What this means</h3>
-        <p>The highest-risk SA2s are not just the hottest places. They are areas where heat exposure combines with vulnerability, housing, health or adaptive-capacity pressures — supporting targeted local responses rather than one national solution.</p>
-        <p class="section05-insight"><strong>Final insight:</strong> Heat-health risk is not evenly distributed and not driven by heat alone. The highest-risk areas need local responses that address both environmental exposure and social vulnerability.</p>
+        <h3>What this means for planning</h3>
+        <p>Heat-health risk is not just a climate issue — it is also a housing, health, and social vulnerability issue. Each high-risk SA2 has a different dominant pressure, which means each needs a different response.</p>
+        <p class="section05-insight"><strong>Final insight:</strong> The highest-risk SA2s need targeted local responses, not one national solution.</p>
+        <p class="section05-look-label">Response types by dominant driver</p>
+        <div class="response-cards">
+          <div class="response-card">
+            <span class="response-type chip-exposure">High exposure</span>
+            <p>Cooling infrastructure, heat alerts and shade programs</p>
+          </div>
+          <div class="response-card">
+            <span class="response-type chip-housing">High housing pressure</span>
+            <p>Rental and home cooling support initiatives</p>
+          </div>
+          <div class="response-card">
+            <span class="response-type chip-health">High health vulnerability</span>
+            <p>Targeted health outreach and emergency planning</p>
+          </div>
+        </div>
       </div>
     </div>
 

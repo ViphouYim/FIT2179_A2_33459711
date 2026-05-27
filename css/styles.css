@@ -678,15 +678,6 @@ p { line-height: 1.45; }
   line-height: 1.45;
 }
 
-.section03-hero-chart {
-  margin-bottom: 18px;
-}
-.section03-pair-row {
-  /* housing + bubble side-by-side — inherits .grid margin-bottom: 18px */
-}
-.section03-seifa-row {
-  /* last panel before section-bridge — no extra top margin needed */
-}
 .section03-chips {
   display: flex;
   flex-wrap: wrap;
@@ -775,4 +766,58 @@ p { line-height: 1.45; }
   .chart-description { font-size: .9rem; }
   .map-chart { min-height: 480px; }
   .proportion-number { font-size: 3.4rem; }
+  .response-cards { grid-template-columns: 1fr; }
+}
+
+/* ── Map reading steps ── */
+.map-steps {
+  margin: 0 0 12px;
+  padding-left: 1.5em;
+  font-size: .88rem;
+  color: var(--ink);
+  line-height: 1.65;
+  font-weight: 600;
+  counter-reset: map-step;
+}
+.map-steps li { margin-bottom: 6px; }
+.explainer-note {
+  margin: 0 0 12px;
+  font-size: .83rem;
+  font-style: italic;
+  color: var(--muted);
+  border-bottom: 1px solid #e4d5c0;
+  padding-bottom: 10px;
+}
+
+/* ── Section 03 driver grid ── */
+.section03-drivers-grid .chart { min-height: 270px; }
+
+/* ── Section 05 response cards ── */
+.response-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.response-card {
+  padding: 10px 12px;
+  background: #faf5ee;
+  border: 1px solid #e4d5c0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.response-card p {
+  margin: 0;
+  font-size: .83rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.response-type {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: .71rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  border: 1.5px solid;
 }
