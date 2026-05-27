@@ -229,6 +229,10 @@ p { line-height: 1.45; }
 .feature-map { grid-template-columns: minmax(0, 1fr) 280px; }
 .three-col .chart-card { align-self: stretch; height: 100%; box-sizing: border-box; }
 .three-col .chart-card .chart { margin-top: auto; }
+.two-col .chart-card { align-self: stretch; height: 100%; box-sizing: border-box; }
+.two-col .chart-card .chart { margin-top: auto; }
+.section03-drivers-grid .chart-card { align-self: stretch; height: 100%; box-sizing: border-box; }
+.section03-drivers-grid .chart-card .chart { margin-top: auto; }
 .chart-card {
   padding: 18px;
   min-width: 0;
