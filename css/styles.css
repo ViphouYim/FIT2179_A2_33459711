@@ -864,13 +864,14 @@ p { line-height: 1.45; }
   margin-bottom: 18px;
 }
 /* hero + 3-col support row (current layout) */
-.section03-hero-card { margin-bottom: 14px; }
+.section03-hero-card { margin-bottom: 22px; }
 .section03-support-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-bottom: 18px;
+  gap: 22px;
+  margin-bottom: 24px;
 }
+.section03-support-row .chart-card { padding: 22px; }
 @media (max-width: 860px) {
   .section03-support-row { grid-template-columns: 1fr; }
 }
