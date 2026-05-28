@@ -842,3 +842,100 @@ p { line-height: 1.45; }
   letter-spacing: .04em;
   border: 1.5px solid;
 }
+@media (max-width: 640px) { .response-cards { grid-template-columns: 1fr; } }
+
+/* ── Section 03 main + support layout ── */
+.section03-claim {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink);
+  border-left: 4px solid var(--accent);
+  padding: 10px 16px;
+  margin: 0 0 16px;
+  background: #fff7ee;
+}
+.section03-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+.section03-support-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.compact-chart-card { padding: 12px 14px; }
+.compact-chart-card .chart-heading { padding-bottom: 6px; margin-bottom: 0; }
+.compact-chart-card h3 { font-size: .92rem; }
+.compact-chart-card .chart { min-height: 0; }
+.compact-chart-card .chart-note { font-size: .78rem; padding-top: 6px; }
+@media (max-width: 900px) {
+  .section03-main-grid { grid-template-columns: 1fr; }
+  .section03-support-stack { flex-direction: row; flex-wrap: wrap; }
+  .section03-support-stack .compact-chart-card { flex: 1 1 260px; }
+}
+
+/* ── Section 02 map explainer (simplified) ── */
+.map-how-to {
+  margin: 0 0 14px;
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.map-legend-list {
+  margin: 0 0 12px;
+  padding-left: 1.2em;
+  font-size: .83rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.map-legend-list li { margin-bottom: 4px; }
+.excluded-details {
+  margin-top: 10px;
+  border-top: 1px solid #e4d5c0;
+  padding-top: 10px;
+}
+.excluded-details summary {
+  cursor: pointer;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+.excluded-details .excluded-list {
+  margin-top: 8px;
+  font-size: .78rem;
+}
+
+/* ── Section 05 response table ── */
+.response-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  font-size: .84rem;
+}
+.response-table th {
+  text-align: left;
+  padding: 7px 10px;
+  background: #f2e8d8;
+  border: 1px solid #ddd0bc;
+  font-weight: 700;
+  font-size: .76rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink);
+}
+.response-table td {
+  padding: 7px 10px;
+  border: 1px solid #e4d5c0;
+  color: var(--muted);
+  vertical-align: top;
+  line-height: 1.45;
+}
+.response-table tr:nth-child(even) td { background: #faf5ee; }
+.response-table tr:first-child td { border-top: none; }
