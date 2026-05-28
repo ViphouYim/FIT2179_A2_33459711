@@ -4,16 +4,7 @@
   "height": 220,
   "data": { "url": "data/combined_sa2.csv" },
   "params": [
-    {
-      "name": "stateFilter3",
-      "value": null,
-      "bind": {
-        "input": "select",
-        "options": [null, "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
-        "labels": ["All states", "ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
-        "name": "Filter by state: "
-      }
-    }
+    { "name": "stateFilter", "value": null }
   ],
   "layer": [
     {
@@ -54,7 +45,7 @@
     {
       "description": "SA2 bubbles",
       "transform": [
-        { "filter": "stateFilter3 == null || datum.state_name == stateFilter3" },
+        { "filter": "stateFilter == null || datum.state_name == stateFilter" },
         { "filter": "isFinite(toNumber(datum.exposure_index)) && isFinite(toNumber(datum.pct_65_plus_2024)) && isFinite(toNumber(datum.hhri))" },
         { "calculate": "toNumber(datum.exposure_index)", "as": "exp" },
         { "calculate": "toNumber(datum.pct_65_plus_2024)", "as": "pct_older" },

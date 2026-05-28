@@ -18,7 +18,7 @@ const cacheBust = `?v=${Date.now()}`;
 const views = {};
 
 // Charts whose stateFilter signal responds to the global dropdown
-const STATE_FILTERED = ["map_hhri", "scatter_exposure_vulnerability", "boxplot_state"];
+const STATE_FILTERED = ["map_hhri", "scatter_exposure_vulnerability", "boxplot_state", "scatter_housing_health", "bubble_older_heat"];
 
 // ── Top-10 SA2 data for the planning profile card ──────────────────────────
 let top10Lookup = {};  // keyed by region_name

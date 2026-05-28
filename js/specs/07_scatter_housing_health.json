@@ -4,19 +4,10 @@
   "height": 220,
   "data": { "url": "data/combined_sa2.csv" },
   "params": [
-    {
-      "name": "stateFilter2",
-      "value": null,
-      "bind": {
-        "input": "select",
-        "options": [null, "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
-        "labels": ["All states", "ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
-        "name": "Filter by state: "
-      }
-    }
+    { "name": "stateFilter", "value": null }
   ],
   "transform": [
-    { "filter": "stateFilter2 == null || datum.state_name == stateFilter2" },
+    { "filter": "stateFilter == null || datum.state_name == stateFilter" },
     { "filter": "isFinite(toNumber(datum.housing_index)) && isFinite(toNumber(datum.health_status_index))" }
   ],
   "mark": "rect",
