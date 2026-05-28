@@ -231,8 +231,7 @@ p { line-height: 1.45; }
 .three-col .chart-card .chart { margin-top: auto; }
 .two-col .chart-card { align-self: stretch; height: 100%; box-sizing: border-box; }
 .two-col .chart-card .chart { margin-top: auto; }
-.section03-drivers-grid .chart-card { align-self: stretch; height: 100%; box-sizing: border-box; }
-.section03-drivers-grid .chart-card .chart { margin-top: auto; }
+
 .chart-card {
   padding: 18px;
   min-width: 0;
@@ -793,8 +792,26 @@ p { line-height: 1.45; }
   padding-bottom: 10px;
 }
 
-/* ── Section 03 driver grid ── */
-.section03-drivers-grid .chart { min-height: 270px; }
+/* ── Section 03 driver story rows ── */
+.driver-story-rows { padding: 20px 24px; }
+.driver-row {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.driver-row:first-child { padding-top: 0; }
+.driver-row:last-child { border-bottom: none; padding-bottom: 0; }
+.driver-text h3 { font-size: 1rem; margin: 0 0 8px; line-height: 1.3; }
+.driver-desc { font-size: .84rem; color: var(--muted); line-height: 1.55; margin: 0 0 14px; }
+.driver-text .chart-note { margin: 0; }
+.driver-chart { min-width: 0; }
+.driver-chart .chart { margin: 0; }
+@media (max-width: 780px) {
+  .driver-row { grid-template-columns: 1fr; }
+}
 
 /* ── Section 05 response cards ── */
 .response-cards {

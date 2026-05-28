@@ -177,43 +177,51 @@
       </div>
     </div>
 
-    <div class="grid two-col section03-drivers-grid">
-      <article class="panel chart-card">
-        <div class="chart-heading">
+    <div class="panel driver-story-rows">
+      <div class="driver-row">
+        <div class="driver-text">
           <p class="chart-kicker">Exposure vs vulnerability</p>
           <h3>Exposure becomes more serious when vulnerability is high</h3>
-          <p>Each dot is one SA2. Colour shows HHRI. Shaded zones mark four quadrant types. Use the dropdown to filter by state.</p>
+          <p class="driver-desc">Each dot is one SA2. Colour shows HHRI. Shaded zones mark four quadrant types. Use the dropdown to filter by state.</p>
+          <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
         </div>
-        <div id="scatter_exposure_vulnerability" class="chart vega-embed"></div>
-        <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
-      </article>
-      <article class="panel chart-card">
-        <div class="chart-heading">
+        <div class="driver-chart">
+          <div id="scatter_exposure_vulnerability" class="chart"></div>
+        </div>
+      </div>
+      <div class="driver-row">
+        <div class="driver-text">
           <p class="chart-kicker">Housing vs health</p>
           <h3>Housing and health pressures compound risk</h3>
-          <p>Darker cells = higher mean HHRI. Upper-right = where both dimensions drive the highest risk.</p>
+          <p class="driver-desc">Darker cells = higher mean HHRI. Upper-right = where both dimensions drive the highest risk.</p>
+          <p class="chart-note">Takeaway: Simultaneous housing and health disadvantage reliably predicts higher overall HHRI.</p>
         </div>
-        <div id="scatter_housing_health" class="chart"></div>
-        <p class="chart-note">Takeaway: Simultaneous housing and health disadvantage reliably predicts higher overall HHRI.</p>
-      </article>
-      <article class="panel chart-card">
-        <div class="chart-heading">
+        <div class="driver-chart">
+          <div id="scatter_housing_health" class="chart"></div>
+        </div>
+      </div>
+      <div class="driver-row">
+        <div class="driver-text">
           <p class="chart-kicker">Age and exposure</p>
           <h3>Older populations in hot areas face compounded risk</h3>
-          <p>Bubble size = population. Colour = HHRI risk band. Upper-right = highest planning priority.</p>
+          <p class="driver-desc">Bubble size = population. Colour = HHRI risk band. Upper-right = highest planning priority.</p>
+          <p class="chart-note">Takeaway: Large older populations in high-exposure areas warrant targeted planning attention.</p>
         </div>
-        <div id="bubble_older_heat" class="chart"></div>
-        <p class="chart-note">Takeaway: Large older populations in high-exposure areas warrant targeted planning attention.</p>
-      </article>
-      <article class="panel chart-card">
-        <div class="chart-heading">
+        <div class="driver-chart">
+          <div id="bubble_older_heat" class="chart"></div>
+        </div>
+      </div>
+      <div class="driver-row">
+        <div class="driver-text">
           <p class="chart-kicker">Socioeconomic disadvantage</p>
           <h3>Disadvantaged areas face higher average heat-health risk</h3>
-          <p>Each bar = mean HHRI per SEIFA decile. Decile 1 = most disadvantaged.</p>
+          <p class="driver-desc">Each bar = mean HHRI per SEIFA decile. Decile 1 = most disadvantaged.</p>
+          <p class="chart-note">Takeaway: The most disadvantaged deciles average notably higher HHRI scores — socioeconomic disadvantage and heat-health risk are closely linked.</p>
         </div>
-        <div id="scatter_seifa_hhri" class="chart"></div>
-        <p class="chart-note">Takeaway: The most disadvantaged deciles average notably higher HHRI scores — socioeconomic disadvantage and heat-health risk are closely linked.</p>
-      </article>
+        <div class="driver-chart">
+          <div id="scatter_seifa_hhri" class="chart"></div>
+        </div>
+      </div>
     </div>
 
     <p class="section-bridge">Individual drivers explain local scores. The next question is whether some states are systematically more exposed than others — and how much variation exists within each state.</p>
