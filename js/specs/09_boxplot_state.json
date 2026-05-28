@@ -4,8 +4,11 @@
   "height": 350,
   "title": {
     "text": "Distribution of heat-health risk by state/territory",
-    "subtitle": "Queensland highlighted \u00b7 States sorted highest to lowest median risk"
+    "subtitle": "Selected state highlighted \u00b7 States sorted highest to lowest median risk"
   },
+  "params": [
+    { "name": "stateFilter", "value": null }
+  ],
   "data": { "url": "data/combined_sa2.csv" },
   "transform": [
     { "filter": "datum.state_name != 'Unknown' && datum.state_name != 'Other Territories' && isValid(datum.hhri)" }
@@ -30,7 +33,7 @@
           "scale": { "domain": [0, 1] }
         },
         "color": {
-          "condition": { "test": "datum.state_name == 'Queensland'", "value": "#c4410c" },
+          "condition": { "test": "stateFilter != null ? datum.state_name == stateFilter : datum.state_name == 'Queensland'", "value": "#c4410c" },
           "value": "#c8b89a"
         },
         "tooltip": [

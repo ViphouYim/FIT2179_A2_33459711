@@ -6,8 +6,20 @@
   "data": {
     "url": "data/top10_components_long.csv"
   },
+  "params": [
+    {
+      "name": "sa2Click",
+      "select": {
+        "type": "point",
+        "fields": ["region_name"],
+        "on": "click",
+        "clear": "dblclick"
+      }
+    }
+  ],
   "mark": {
-    "type": "rect"
+    "type": "rect",
+    "cursor": "pointer"
   },
   "encoding": {
     "x": {
@@ -38,6 +50,10 @@
         "domain": [0, 1],
         "range": ["#fdf6ec", "#fdd49e", "#f28e2b", "#c4410c", "#8c2d04"]
       }
+    },
+    "opacity": {
+      "condition": {"param": "sa2Click", "value": 1},
+      "value": 0.4
     },
     "tooltip": [
       "region_name",
