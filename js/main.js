@@ -50,8 +50,9 @@ const charts = [
 ];
 
 const embedOptions = { actions: false, renderer: 'svg' };
+const cacheBust = `?v=${Date.now()}`;
 charts.forEach(([id, spec]) => {
-  vegaEmbed(`#${id}`, spec, embedOptions).catch(error => {
+  vegaEmbed(`#${id}`, spec + cacheBust, embedOptions).catch(error => {
     console.error(`Could not load ${id}`, error);
     const el = document.getElementById(id);
     if (el) el.innerHTML = `<p class="chart-error">Chart could not load. Check file paths and run through a local server.</p>`;
