@@ -863,21 +863,19 @@ p { line-height: 1.45; }
   align-items: start;
   margin-bottom: 18px;
 }
-.section03-support-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* hero + 3-col support row (current layout) */
+.section03-hero-card { margin-bottom: 14px; }
+.section03-support-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
 }
-.compact-chart-card { padding: 12px 14px; }
-.compact-chart-card .chart-heading { padding-bottom: 6px; margin-bottom: 0; }
-.compact-chart-card h3 { font-size: .92rem; }
-.compact-chart-card .chart { min-height: 0; }
-.compact-chart-card .chart-note { font-size: .78rem; padding-top: 6px; }
+@media (max-width: 860px) {
+  .section03-support-row { grid-template-columns: 1fr; }
+}
 @media (max-width: 900px) {
   .section03-main-grid { grid-template-columns: 1fr; }
-  .section03-support-stack { flex-direction: row; flex-wrap: wrap; }
-  .section03-support-stack .compact-chart-card { flex: 1 1 260px; }
-}
 
 /* ── Section 02 map explainer (simplified) ── */
 .map-how-to {

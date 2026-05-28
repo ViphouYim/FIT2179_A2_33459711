@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 220,
+  "height": 270,
   "data": { "url": "data/combined_sa2.csv" },
   "params": [
     { "name": "stateFilter", "value": null }

@@ -200,42 +200,40 @@
     </div>
 
     <p class="section03-claim">The highest-risk SA2s are not just hotter — they are places where heat overlaps with social and health vulnerability.</p>
-    <div class="section03-main-grid">
+    <article class="panel chart-card section03-hero-card">
+      <div class="chart-heading">
+        <p class="chart-kicker">Primary driver</p>
+        <h3>Exposure becomes more serious when vulnerability is high</h3>
+        <p>Each dot is one SA2. Colour shows HHRI. Shaded zones mark four quadrant types. Use the dropdown to filter by state.</p>
+      </div>
+      <div id="scatter_exposure_vulnerability" class="chart"></div>
+      <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
+    </article>
+    <div class="section03-support-row">
       <article class="panel chart-card">
         <div class="chart-heading">
-          <p class="chart-kicker">Primary driver</p>
-          <h3>Exposure becomes more serious when vulnerability is high</h3>
-          <p>Each dot is one SA2. Colour shows HHRI. Shaded zones mark four quadrant types. Use the dropdown to filter by state.</p>
+          <p class="chart-kicker">Housing vs health</p>
+          <h3>Housing and health pressures compound risk</h3>
         </div>
-        <div id="scatter_exposure_vulnerability" class="chart"></div>
-        <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
+        <div id="scatter_housing_health" class="chart"></div>
+        <p class="chart-note">Simultaneous housing and health disadvantage reliably predicts higher HHRI.</p>
       </article>
-      <div class="section03-support-stack">
-        <article class="panel chart-card compact-chart-card">
-          <div class="chart-heading">
-            <p class="chart-kicker">Housing vs health</p>
-            <h3>Housing and health pressures compound risk</h3>
-          </div>
-          <div id="scatter_housing_health" class="chart"></div>
-          <p class="chart-note">Simultaneous housing and health disadvantage reliably predicts higher HHRI.</p>
-        </article>
-        <article class="panel chart-card compact-chart-card">
-          <div class="chart-heading">
-            <p class="chart-kicker">Age and exposure</p>
-            <h3>Older populations in hot areas face compounded risk</h3>
-          </div>
-          <div id="bubble_older_heat" class="chart"></div>
-          <p class="chart-note">Large older populations in high-exposure areas warrant targeted planning attention.</p>
-        </article>
-        <article class="panel chart-card compact-chart-card">
-          <div class="chart-heading">
-            <p class="chart-kicker">Socioeconomic disadvantage</p>
-            <h3>Disadvantaged areas face higher average heat-health risk</h3>
-          </div>
-          <div id="scatter_seifa_hhri" class="chart"></div>
-          <p class="chart-note">The most disadvantaged communities carry a disproportionate heat-health burden.</p>
-        </article>
-      </div>
+      <article class="panel chart-card">
+        <div class="chart-heading">
+          <p class="chart-kicker">Age and exposure</p>
+          <h3>Older populations in hot areas face compounded risk</h3>
+        </div>
+        <div id="bubble_older_heat" class="chart"></div>
+        <p class="chart-note">Large older populations in high-exposure areas warrant targeted planning attention.</p>
+      </article>
+      <article class="panel chart-card">
+        <div class="chart-heading">
+          <p class="chart-kicker">Socioeconomic disadvantage</p>
+          <h3>Disadvantaged areas face higher average heat-health risk</h3>
+        </div>
+        <div id="scatter_seifa_hhri" class="chart"></div>
+        <p class="chart-note">The most disadvantaged communities carry a disproportionate heat-health burden.</p>
+      </article>
     </div>
 
     <p class="section-bridge">Individual drivers explain local scores. The next question is whether some states are systematically more exposed than others — and how much variation exists within each state.</p>
