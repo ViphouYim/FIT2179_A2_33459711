@@ -110,9 +110,17 @@
     <p class="section-bridge">Heat is the largest weather-health burden nationally. The next question is whether this risk is evenly distributed across Australia — and who carries the greatest share.</p>
 
     <div id="s02" class="s02-header">
-      <div class="s02-header-top">
-        <div class="section-title-main"><span>02 &#8212;</span><h2>Where the risk is concentrated</h2></div>
-        <div class="s02-inline-filter">
+      <div class="section-title-main"><span>02 &#8212;</span><h2>Where the risk is concentrated</h2></div>
+      <p class="section-title-intro">Heat-health risk is uneven across Australia. The map reveals where exposure, vulnerability and adaptive capacity combine into higher local risk.</p>
+    </div>
+    <section class="s02-map-section">
+      <article class="panel chart-card">
+        <div class="chart-heading">
+          <p class="chart-kicker">Spatial pattern</p>
+          <h3>Heat-health risk is not evenly spread</h3>
+          <p>Hover each SA2 to inspect local risk conditions and compare HHRI scores across regions.</p>
+        </div>
+        <div class="map-filter-bar">
           <label for="global-state-filter" class="state-filter-label">Filter by state</label>
           <select id="global-state-filter" class="state-filter-select">
             <option value="">All Australia</option>
@@ -126,16 +134,6 @@
             <option value="Australian Capital Territory">ACT &#8212; Australian Capital Territory</option>
           </select>
           <span id="state-filter-status" class="state-filter-status" aria-live="polite">All states shown</span>
-        </div>
-      </div>
-      <p class="section-title-intro">Heat-health risk is uneven across Australia. The map reveals where exposure, vulnerability and adaptive capacity combine into higher local risk.</p>
-    </div>
-    <section class="s02-map-section">
-      <article class="panel chart-card">
-        <div class="chart-heading">
-          <p class="chart-kicker">Spatial pattern</p>
-          <h3>Heat-health risk is not evenly spread</h3>
-          <p>Hover each SA2 to inspect local risk conditions and compare HHRI scores across regions.</p>
         </div>
         <div id="map_hhri" class="chart map-chart"></div>
         <p class="chart-note">Takeaway: HHRI reflects compound risk — not temperature alone.</p>

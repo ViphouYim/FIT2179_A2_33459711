@@ -1342,7 +1342,7 @@ p { line-height: 1.45; }
   line-height: 1.45;
 }
 
-/* ── Section 02 header: section title + inline filter on same row ── */
+/* ── Section 02 header: clean title-only block ── */
 .s02-header {
   border-top: 3px solid var(--ink);
   padding-top: 20px;
@@ -1351,31 +1351,7 @@ p { line-height: 1.45; }
   flex-direction: column;
   gap: 10px;
 }
-.s02-header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.s02-header-top .section-title-main { flex: 1; min-width: 0; }
-.s02-inline-filter {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  padding: 7px 14px;
-  background: #f9f3ea;
-  border: 1.5px solid #d8c8b8;
-}
-.s02-inline-filter .state-filter-label {
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  white-space: nowrap;
-}
+.s02-header h2 { margin: 0; }
 .s02-header .section-title-intro {
   margin: 0;
   color: var(--muted);
@@ -1383,8 +1359,16 @@ p { line-height: 1.45; }
   font-size: .92rem;
   line-height: 1.5;
 }
-@media (max-width: 700px) {
-  .s02-header-top { flex-direction: column; align-items: flex-start; }
+
+/* ── Map filter bar: inside the map card, above the chart ── */
+.map-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  background: #f9f3ea;
+  border: 1.5px solid #d8c8b8;
 }
 
 /* ── Section 02 map: full-width card + 3-col annotation strip ── */
