@@ -1048,6 +1048,7 @@ p { line-height: 1.45; }
 }
 .card-obs-item strong { font-size: .8rem; color: var(--ink); line-height: 1.2; }
 .card-obs-item span   { font-size: .76rem; color: var(--muted); line-height: 1.4; }
+.card-obs-insight { font-size: .84rem; color: var(--ink); line-height: 1.55; margin: 0; }
 .section03-support-row {
   display: grid;
   grid-template-columns: 1fr;
