@@ -1372,7 +1372,7 @@ p { line-height: 1.45; }
 }
 
 /* ── Section 02 map: full-width card + 3-col annotation strip ── */
-.s02-map-section { margin-bottom: 24px; }
+.s02-map-section { margin-bottom: 40px; }
 .map-annotation-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
