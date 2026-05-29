@@ -775,7 +775,6 @@ p { line-height: 1.45; }
   .hero,
   .two-col,
   .feature-map,
-  .s02-masthead,
   .section-title,
   .section05-layout,
   .section03-main-row,
@@ -1343,49 +1342,48 @@ p { line-height: 1.45; }
   line-height: 1.45;
 }
 
-/* ── Section 02 masthead: title + filter unified header row ── */
-.s02-masthead {
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  align-items: start;
-  gap: 32px;
+/* ── Section 02 header: section title + inline filter on same row ── */
+.s02-header {
   border-top: 3px solid var(--ink);
   padding-top: 20px;
-  margin: 72px 0 32px;
-}
-.s02-masthead-left {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.s02-masthead-left span {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  color: var(--accent-dark);
-  font-weight: 800;
-  line-height: 1;
-}
-.s02-masthead-left h2 { margin: 0; }
-.s02-masthead-left p {
-  margin: 0;
-  color: var(--muted);
-  max-width: 64ch;
-  font-size: .92rem;
-  line-height: 1.55;
-}
-.s02-filter-card {
-  padding: 18px 20px;
+  margin: 72px 0 28px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.s02-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.s02-header-top .section-title-main { flex: 1; min-width: 0; }
+.s02-inline-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 7px 14px;
   background: #f9f3ea;
+  border: 1.5px solid #d8c8b8;
 }
-.s02-filter-card .mini-kicker { margin: 0; }
-.s02-filter-card .state-filter-desc {
-  margin: 0;
-  font-size: .82rem;
+.s02-inline-filter .state-filter-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   color: var(--muted);
-  line-height: 1.45;
+  white-space: nowrap;
 }
-.s02-filter-card .state-filter-controls { flex-wrap: wrap; }
+.s02-header .section-title-intro {
+  margin: 0;
+  color: var(--muted);
+  max-width: 72ch;
+  font-size: .92rem;
+  line-height: 1.5;
+}
+@media (max-width: 700px) {
+  .s02-header-top { flex-direction: column; align-items: flex-start; }
+}
 
