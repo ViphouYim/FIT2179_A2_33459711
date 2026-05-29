@@ -1505,15 +1505,16 @@ a.hero-section-item:hover > span:last-child {
 
 /* ── Hero story question callout ── */
 .hero-question {
-  padding: 0 0 0 20px;
+  padding: 4px 0 4px 18px;
+  border-left: 3px solid var(--accent-dark);
 }
 .hero-question p {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: .96rem;
+  font-size: 1.05rem;
   font-style: italic;
-  color: var(--ink);
-  line-height: 1.45;
+  color: var(--accent-dark);
+  line-height: 1.5;
 }
 
 /* ── Section 02 header: clean title-only block ── */
