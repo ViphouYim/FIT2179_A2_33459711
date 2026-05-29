@@ -1028,6 +1028,26 @@ p { line-height: 1.45; }
   color: var(--muted);
   line-height: 1.4;
 }
+/* reusable 2-col bottom observation strip */
+.card-obs-strip {
+  margin-top: 8px;
+  padding: 12px 14px;
+  background: #f5ece0;
+  border-top: 2px solid var(--ink);
+}
+.card-obs-strip .mini-kicker { margin-bottom: 8px; }
+.card-obs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.card-obs-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.card-obs-item strong { font-size: .8rem; color: var(--ink); line-height: 1.2; }
+.card-obs-item span   { font-size: .76rem; color: var(--muted); line-height: 1.4; }
 .section03-support-row {
   display: grid;
   grid-template-columns: 1fr;
