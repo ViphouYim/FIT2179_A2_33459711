@@ -1040,6 +1040,7 @@ p { line-height: 1.45; }
 }
 @media (max-width: 900px) {
   .section03-main-grid { grid-template-columns: 1fr; }
+}
 
 /* ── Section 02 map explainer (simplified) ── */
 .map-how-to {
