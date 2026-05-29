@@ -159,12 +159,9 @@ p { line-height: 1.45; }
   color: #3f2e1f;
 }
 .hero-mini {
-  margin-top: 2px;
-  padding: 10px 12px;
-  border: 1px solid #d8c8b8;
-  background: #fff7ee;
+  padding: 0 16px 0 0;
+  border-right: 1px solid #ddcfbf;
   width: 100%;
-  max-width: 100%;
 }
 .mini-kicker {
   margin: 0;
@@ -263,9 +260,10 @@ p { line-height: 1.45; }
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 0;
   padding-top: 14px;
   border-top: 1px solid #ddcfbf;
+  align-items: center;
 }
 a.hero-section-item {
   text-decoration: none;
@@ -1507,11 +1505,7 @@ a.hero-section-item:hover > span:last-child {
 
 /* ── Hero story question callout ── */
 .hero-question {
-  margin-top: 4px;
-  padding: 14px 18px;
-  background: #fff3e8;
-  border-left: 4px solid var(--accent);
-  border-radius: 0 6px 6px 0;
+  padding: 0 0 0 20px;
 }
 .hero-question p {
   margin: 0;
