@@ -531,7 +531,7 @@ p { line-height: 1.45; }
   flex: 1;
 }
 .section01-bar {
-  min-height: 440px;
+  min-height: 360px;
 }
 .section01-bar .chart {
   flex: 1;
