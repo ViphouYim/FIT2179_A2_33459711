@@ -55,16 +55,16 @@ body {
 .hero {
   display: grid;
   grid-template-columns: 7fr 5fr;
-  gap: 48px;
-  padding: 80px 48px 64px;
+  gap: 40px;
+  padding: 52px 48px 44px;
   align-items: center;
-  min-height: 680px;
+  min-height: 0;
   box-sizing: border-box;
 }
 .hero-left {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 .eyebrow { margin: 0 0 8px; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: var(--accent-dark); font-weight: 800; }
 h1 { font-family: var(--font-heading); font-size: clamp(56px, 8vw, 96px); line-height: .92; margin: 0; letter-spacing: -.04em; max-width: 12ch; font-weight: 700; }
@@ -75,7 +75,7 @@ p { line-height: 1.45; }
 .title-secondary { display: block; }
 .title-secondary { font-size: .86em; margin-top: .03em; white-space: nowrap; }
 .hero-subtitle {
-  margin-top: 14px;
+  margin-top: 6px;
   max-width: none;
   font-family: var(--font-heading);
   font-size: clamp(1.05rem, 1.65vw, 1.52rem);
@@ -85,9 +85,9 @@ p { line-height: 1.45; }
 .hero-copy {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  justify-content: space-between;
-  height: 100%;
+  gap: 14px;
+  justify-content: flex-start;
+  height: auto;
 }
 .hero-text {
   border-left: 1.5px solid var(--line);
