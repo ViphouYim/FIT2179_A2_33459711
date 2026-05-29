@@ -1071,7 +1071,7 @@ p { line-height: 1.45; }
   align-items: center;
   gap: 12px 24px;
   padding: 14px 20px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   background: #f9f3ea;
 }
 .state-filter-intro { flex: 1 1 220px; }
