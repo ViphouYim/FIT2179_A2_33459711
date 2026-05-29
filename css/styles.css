@@ -258,6 +258,23 @@ p { line-height: 1.45; }
   color: var(--ink);
   line-height: 1.35;
 }
+/* full-width bottom strip inside the hero grid */
+.hero-full-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #ddcfbf;
+}
+a.hero-section-item {
+  text-decoration: none;
+  cursor: pointer;
+}
+a.hero-section-item:hover > span:last-child {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
 .section-title { display: grid; grid-template-columns: 1fr; gap: 8px; align-items: start; margin: 72px 0 32px; border-top: 3px solid var(--ink); padding-top: 16px; }
 .section-title-main { display: flex; align-items: baseline; gap: 12px; }
 .section-title-main span { white-space: nowrap; }
