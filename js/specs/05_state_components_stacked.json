@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 350,
+  "height": 280,
   "title": "Average risk components by state/territory",
   "data": {
     "url": "data/state_components_long.csv"
