@@ -1001,6 +1001,33 @@ p { line-height: 1.45; }
 .qg-bot-right .qg-label { color: #6a520a; }
 .qg-bot-left  { background: #f2f5f0; border-color: #aab99d; }
 .qg-bot-left  .qg-label { color: #3a4a30; }
+.scatter-obs-strip {
+  margin-top: 4px;
+  padding: 12px 14px;
+  background: #f5ece0;
+  border-top: 2px solid var(--ink);
+}
+.scatter-obs-strip .mini-kicker { margin-bottom: 10px; }
+.scatter-obs-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.scatter-obs-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.scatter-obs-item strong {
+  font-size: .8rem;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.scatter-obs-item span {
+  font-size: .76rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
 .section03-support-row {
   display: grid;
   grid-template-columns: 1fr;
