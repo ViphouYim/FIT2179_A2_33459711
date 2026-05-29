@@ -1524,3 +1524,200 @@ p { line-height: 1.45; }
 }
 
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 05 — EDITORIAL REDESIGN
+   ═══════════════════════════════════════════════════════════════ */
+.s05-ed-header {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 22px;
+  align-items: start;
+  padding-top: 48px;
+  border-top: 3px solid var(--ink);
+  margin: 72px 0 28px;
+}
+.s05-num {
+  font-size: 80px;
+  line-height: 0.85;
+  font-weight: 900;
+  color: #9b2f14;
+  letter-spacing: -3px;
+  font-family: var(--font-heading);
+}
+.s05-rule {
+  height: 5px;
+  background: var(--ink);
+  margin-bottom: 10px;
+}
+.s05-title-block h2 {
+  font-size: 1.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.s05-title-block > p {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 72ch;
+}
+.s05-main-grid {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: stretch;
+}
+.s05-heatmap-panel,
+.s05-guide-panel {
+  border-top: 5px solid var(--ink);
+  border-left: 1px solid #d4c4b0;
+  border-right: 1px solid #d4c4b0;
+  border-bottom: 1px solid #d4c4b0;
+  background: #fffaf1;
+  border-radius: 0;
+  box-shadow: none;
+}
+.s05-heatmap-panel {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.s05-guide-panel {
+  padding: 0;
+  position: sticky;
+  top: 24px;
+  overflow-y: auto;
+  max-height: calc(100vh - 48px);
+}
+.s05-guide-panel .profile-default-inner {
+  padding: 20px;
+}
+.s05-module-label {
+  display: block;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #9b2f14;
+  margin: 0 0 8px;
+}
+.s05-module-heading {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+.s05-module-desc {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+.s05-guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 4px;
+}
+.s05-guide-step {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+.s05-guide-step > span {
+  font-size: .7rem;
+  font-weight: 900;
+  color: #9b2f14;
+  letter-spacing: .04em;
+  padding-top: 2px;
+}
+.s05-guide-step > p {
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+.s05-guide-divider {
+  height: 1px;
+  background: #d4c4b0;
+  margin: 14px 0;
+}
+.s05-comp-guide {
+  display: flex;
+  flex-direction: column;
+}
+.s05-comp-row {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 6px;
+  padding: 7px 0;
+  border-bottom: 1px solid #e4d5c0;
+  align-items: start;
+}
+.s05-comp-row:last-child { border-bottom: none; }
+.s05-comp-row strong {
+  font-size: .74rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.s05-comp-row span {
+  font-size: .73rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+/* Response strategy strip */
+.s05-response-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.s05-response-item {
+  border-top: 5px solid var(--ink);
+  border-left: 1px solid #d4c4b0;
+  border-right: 1px solid #d4c4b0;
+  border-bottom: 1px solid #d4c4b0;
+  background: #fffaf1;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.s05-response-label {
+  display: inline-block;
+  padding: 2px 7px;
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  border: 1.5px solid;
+  align-self: flex-start;
+}
+.s05-response-item > p {
+  margin: 0;
+  font-size: .84rem;
+  color: var(--ink);
+  line-height: 1.42;
+}
+/* Responsive overrides */
+@media (max-width: 900px) {
+  .s05-main-grid { grid-template-columns: 1fr; }
+  .s05-guide-panel { position: static; max-height: none; overflow-y: visible; }
+  .s05-response-strip { grid-template-columns: repeat(2, 1fr); }
+  .s05-ed-header { grid-template-columns: 60px 1fr; }
+  .s05-num { font-size: 56px; }
+}
+@media (max-width: 580px) {
+  .s05-response-strip { grid-template-columns: 1fr; }
+  .s05-ed-header { grid-template-columns: 1fr; }
+  .s05-num { display: none; }
+}

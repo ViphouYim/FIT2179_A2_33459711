@@ -169,9 +169,22 @@ function hideProfileCard() {
   const card = document.getElementById("profile-card");
   if (!card) return;
   card.innerHTML = `<div class="profile-default-inner">
-    <p class="chart-kicker">How to read</p>
-    <p>Rows are high-risk SA2s, columns are risk components, and darker cells show stronger driver scores. Compare rows to see whether each place is driven mainly by exposure, housing, health, vulnerability, or adaptive capacity.</p>
-    <p class="profile-click-hint">Click any row to see that SA2\u2019s planning profile.</p>
+    <p class="s05-module-label">How to read</p>
+    <div class="s05-guide-steps">
+      <div class="s05-guide-step"><span>01</span><p>Each row is a high-risk SA2 community.</p></div>
+      <div class="s05-guide-step"><span>02</span><p>Each column is one of five risk components.</p></div>
+      <div class="s05-guide-step"><span>03</span><p>Darker cells indicate stronger driver scores.</p></div>
+      <div class="s05-guide-step"><span>04</span><p>Click any row to reveal that SA2\u2019s planning profile.</p></div>
+    </div>
+    <div class="s05-guide-divider"></div>
+    <p class="s05-module-label">Component guide</p>
+    <div class="s05-comp-guide">
+      <div class="s05-comp-row chip-exposure"><strong>Exposure</strong><span>Heat and environmental intensity</span></div>
+      <div class="s05-comp-row chip-housing"><strong>Housing</strong><span>Rental stress, overcrowding and dwelling condition</span></div>
+      <div class="s05-comp-row chip-health"><strong>Health</strong><span>Chronic disease and health service access</span></div>
+      <div class="s05-comp-row chip-vuln"><strong>Vulnerability</strong><span>Social disadvantage and demographic sensitivity</span></div>
+      <div class="s05-comp-row chip-age"><strong>Adaptive capacity</strong><span>Resources and infrastructure to respond</span></div>
+    </div>
   </div>`;
 }
 

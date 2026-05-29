@@ -306,53 +306,58 @@
 
     <p class="section-bridge">State and component analysis reveals the structure of risk. The final section focuses on the highest-risk SA2s to show what drives their scores — and what types of response each may need.</p>
 
-    <section id="s05" class="section-title">
-      <div class="section-title-main">
-        <span>05 —</span><h2>The highest-risk communities need targeted local responses</h2>
+    <div id="s05" class="s05-ed-header">
+      <div class="s05-num">05</div>
+      <div class="s05-title-block">
+        <div class="s05-rule"></div>
+        <h2>The highest-risk communities need targeted local responses</h2>
+        <p>High-risk SA2s are shaped by different combinations of exposure, housing stress, health vulnerability and adaptive capacity &#8212; no single national solution can address them all.</p>
       </div>
-      <p class="section-title-intro">High-risk SA2s are driven by different combinations of pressure — which means one national solution cannot address all of them.</p>
-    </section>
+    </div>
 
-    <div class="final-layout">
-      <article class="panel chart-card section05-full-chart">
-        <div class="chart-heading">
-          <p class="chart-kicker">Final synthesis</p>
-          <h3>The highest-risk SA2s are driven by different combinations of pressure</h3>
-          <p>Each row is a high-risk SA2 and each column is a risk component. Darker cells indicate stronger component scores. <strong>Click any row to see that SA2&#8217;s planning profile.</strong></p>
-        </div>
+    <div class="s05-main-grid">
+      <div class="s05-heatmap-panel">
+        <p class="s05-module-label">Final synthesis</p>
+        <h3 class="s05-module-heading">Different communities show different risk fingerprints</h3>
+        <p class="s05-module-desc">Each row is a high-risk SA2. Darker cells show stronger pressure from that component. Compare rows to see whether a place needs exposure reduction, housing support, health outreach or response-capacity investment. <strong>Click any row</strong> to see that SA2&#8217;s planning profile.</p>
         <div id="heatmap_top_components" class="chart"></div>
-      </article>
-      <div id="profile-card" class="profile-card" aria-live="polite" role="region" aria-label="SA2 planning profile">
+      </div>
+      <div id="profile-card" class="s05-guide-panel" aria-live="polite" role="region" aria-label="SA2 planning profile">
         <div class="profile-default-inner">
-          <p class="chart-kicker">How to read</p>
-          <p>Rows are high-risk SA2s, columns are risk components, and darker cells show stronger driver scores. Compare rows to see whether each place is driven mainly by exposure, housing, health, vulnerability, or adaptive capacity.</p>
-          <p class="profile-click-hint">Click any row to see that SA2&#8217;s planning profile.</p>
-          <p class="chart-kicker" style="margin-top:14px">Component guide</p>
-          <div class="profile-comp-guide">
-            <div class="pcg-item chip-exposure"><strong>Exposure</strong><span>Heat and environmental intensity in the SA2</span></div>
-            <div class="pcg-item chip-housing"><strong>Housing</strong><span>Rental stress, overcrowding and dwelling condition</span></div>
-            <div class="pcg-item chip-health"><strong>Health</strong><span>Chronic disease burden and health service access</span></div>
-            <div class="pcg-item chip-vuln"><strong>Vulnerability</strong><span>Social disadvantage and demographic sensitivity</span></div>
-            <div class="pcg-item chip-age"><strong>Adaptive capacity</strong><span>Resources and infrastructure to respond to heat risk</span></div>
+          <p class="s05-module-label">How to read</p>
+          <div class="s05-guide-steps">
+            <div class="s05-guide-step"><span>01</span><p>Each row is a high-risk SA2 community.</p></div>
+            <div class="s05-guide-step"><span>02</span><p>Each column is one of five risk components.</p></div>
+            <div class="s05-guide-step"><span>03</span><p>Darker cells indicate stronger driver scores.</p></div>
+            <div class="s05-guide-step"><span>04</span><p>Click any row to reveal that SA2&#8217;s planning profile.</p></div>
+          </div>
+          <div class="s05-guide-divider"></div>
+          <p class="s05-module-label">Component guide</p>
+          <div class="s05-comp-guide">
+            <div class="s05-comp-row chip-exposure"><strong>Exposure</strong><span>Heat and environmental intensity</span></div>
+            <div class="s05-comp-row chip-housing"><strong>Housing</strong><span>Rental stress, overcrowding and dwelling condition</span></div>
+            <div class="s05-comp-row chip-health"><strong>Health</strong><span>Chronic disease and health service access</span></div>
+            <div class="s05-comp-row chip-vuln"><strong>Vulnerability</strong><span>Social disadvantage and demographic sensitivity</span></div>
+            <div class="s05-comp-row chip-age"><strong>Adaptive capacity</strong><span>Resources and infrastructure to respond</span></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="response-grid">
-      <div class="panel response-grid-card">
-        <span class="response-type chip-exposure">High exposure</span>
+    <div class="s05-response-strip">
+      <div class="s05-response-item">
+        <span class="s05-response-label chip-exposure">High exposure</span>
         <p>Cooling centres, shade infrastructure and heat alerts</p>
       </div>
-      <div class="panel response-grid-card">
-        <span class="response-type chip-housing">Housing pressure</span>
+      <div class="s05-response-item">
+        <span class="s05-response-label chip-housing">Housing pressure</span>
         <p>Rental cooling support and home upgrade programs</p>
       </div>
-      <div class="panel response-grid-card">
-        <span class="response-type chip-health">Health vulnerability</span>
+      <div class="s05-response-item">
+        <span class="s05-response-label chip-health">Health vulnerability</span>
         <p>Outreach to older and medically vulnerable residents</p>
       </div>
-      <div class="panel response-grid-card">
-        <span class="response-type chip-seifa">Low adaptive capacity</span>
+      <div class="s05-response-item">
+        <span class="s05-response-label chip-seifa">Low adaptive capacity</span>
         <p>Transport access and local emergency support networks</p>
       </div>
     </div>
