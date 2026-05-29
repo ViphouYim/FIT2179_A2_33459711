@@ -1387,3 +1387,30 @@ p { line-height: 1.45; }
   .s02-header-top { flex-direction: column; align-items: flex-start; }
 }
 
+/* ── Section 02 map: full-width card + 3-col annotation strip ── */
+.s02-map-section { margin-bottom: 24px; }
+.map-annotation-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 28px;
+  border-top: 1px solid rgba(23,21,19,.12);
+  padding-top: 16px;
+  margin-top: 8px;
+}
+.map-annotation-strip p,
+.map-annotation-strip li {
+  font-size: .83rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 6px 0 0;
+}
+.map-annotation-strip ul {
+  padding-left: 1.1em;
+  margin: 6px 0 0;
+}
+.map-annotation-strip li { margin-bottom: 3px; }
+.map-annotation-strip .mini-kicker { margin: 0; }
+@media (max-width: 700px) {
+  .map-annotation-strip { grid-template-columns: 1fr; }
+}
+
