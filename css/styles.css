@@ -1373,7 +1373,7 @@ p { line-height: 1.45; }
 
 /* ── Section 02 map: full-width card + 3-col annotation strip ── */
 .s02-map-section { margin-bottom: 0; }
-.s02-support-grid { margin-top: 48px; }
+.s02-support-grid { margin-top: 64px; }
 .map-annotation-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
