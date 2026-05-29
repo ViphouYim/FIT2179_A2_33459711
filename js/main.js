@@ -175,3 +175,29 @@ function hideProfileCard() {
   </div>`;
 }
 
+// ── Reading progress bar ───────────────────────────────────────────────────
+(function () {
+  const bar = document.getElementById("reading-progress");
+  if (!bar) return;
+  window.addEventListener("scroll", function () {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (scrollable > 0 ? (window.scrollY / scrollable * 100) : 0) + "%";
+  }, { passive: true });
+})();
+
+// ── Active section navigation ─────────────────────────────────────────────
+(function () {
+  const navLinks = Array.from(document.querySelectorAll(".story-nav-link[href^='#']"));
+  if (!navLinks.length) return;
+  const targets = navLinks.map(l => document.querySelector(l.getAttribute("href"))).filter(Boolean);
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        const id = "#" + entry.target.id;
+        navLinks.forEach(l => l.classList.toggle("active", l.getAttribute("href") === id));
+      }
+    });
+  }, { rootMargin: "-15% 0px -75% 0px" });
+  targets.forEach(t => observer.observe(t));
+})();
+

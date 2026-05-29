@@ -10,6 +10,16 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
 </head>
 <body>
+  <div id="reading-progress"></div>
+  <nav class="story-nav" aria-label="Dashboard sections">
+    <div class="story-nav-inner">
+      <a href="#s01" class="story-nav-link" title="01 — Why heat-health risk matters"><span class="story-nav-num">01</span>Why it matters</a>
+      <a href="#s02" class="story-nav-link" title="02 — Where the risk is concentrated"><span class="story-nav-num">02</span>Where risk is</a>
+      <a href="#s03" class="story-nav-link" title="03 — What drives heat-health risk"><span class="story-nav-num">03</span>What drives risk</a>
+      <a href="#s04" class="story-nav-link" title="04 — Risk levels differ by state"><span class="story-nav-num">04</span>State differences</a>
+      <a href="#s05" class="story-nav-link" title="05 — Targeted local responses"><span class="story-nav-num">05</span>Local responses</a>
+    </div>
+  </nav>
   <main class="report-shell">
     <header class="hero panel">
       <div class="hero-left">
@@ -53,7 +63,7 @@
       <p class="hero-source">Sources: ACS/ABS Heat-Health Risk Index, ABS SEIFA, ABS Regional Population, AIHW extreme weather injury data, ABS SA2 boundaries.</p>
     </header>
 
-    <section class="section-title section01-header">
+    <section id="s01" class="section-title section01-header">
       <div class="section-title-main">
         <span>01 —</span><h2>Why heat-health risk matters</h2>
       </div>
@@ -95,7 +105,7 @@
 
     <p class="section-bridge">Heat is the largest weather-health burden nationally. The next question is whether this risk is evenly distributed across Australia — and who carries the greatest share.</p>
 
-    <section class="section-title">
+    <section id="s02" class="section-title">
       <span>02</span><h2>Where the risk is concentrated</h2>
       <p>Heat-health risk is uneven across Australia. The map reveals where exposure, vulnerability and adaptive capacity combine into higher local risk.</p>
     </section>
@@ -157,7 +167,7 @@
 
     <p class="section-bridge">Knowing where risk is highest raises the question of why. The following charts decompose the HHRI into its five components to reveal which specific pressures are driving local scores.</p>
 
-    <section class="section-title">
+    <section id="s03" class="section-title">
       <div class="section-title-main">
         <span>03 —</span><h2>What drives heat-health risk?</h2>
       </div>
@@ -235,7 +245,7 @@
 
     <p class="section-bridge">Individual drivers explain local scores. The next question is whether some states are systematically more exposed than others — and how much variation exists within each state.</p>
 
-    <section class="section-title">
+    <section id="s04" class="section-title">
       <div class="section-title-main">
         <span>04 —</span><h2>Risk levels differ sharply between states</h2>
       </div>
@@ -251,7 +261,7 @@
 
     <p class="section-bridge">State and component analysis reveals the structure of risk. The final section focuses on the highest-risk SA2s to show what drives their scores — and what types of response each may need.</p>
 
-    <section class="section-title">
+    <section id="s05" class="section-title">
       <div class="section-title-main">
         <span>05 —</span><h2>The highest-risk communities need targeted local responses</h2>
       </div>
