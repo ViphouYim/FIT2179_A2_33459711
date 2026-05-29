@@ -956,7 +956,7 @@ p { line-height: 1.45; }
   grid-template-columns: 8fr 4fr;
   gap: 24px;
   margin-bottom: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 .section03-explain-card {
   padding: 24px;
@@ -1002,7 +1002,7 @@ p { line-height: 1.45; }
 .qg-bot-left  { background: #f2f5f0; border-color: #aab99d; }
 .qg-bot-left  .qg-label { color: #3a4a30; }
 .scatter-obs-strip {
-  margin-top: 4px;
+  margin-top: auto;
   padding: 12px 14px;
   background: #f5ece0;
   border-top: 2px solid var(--ink);
