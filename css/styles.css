@@ -833,7 +833,6 @@ p { line-height: 1.45; }
   h1 { font-size: clamp(48px, 10vw, 72px); }
   .response-grid { grid-template-columns: repeat(2, 1fr); }
   .section03-support-row { grid-template-columns: repeat(2, 1fr); }
-  .section03-support-row > :nth-child(3) { grid-column: 1 / -1; }
   .profile-card { position: static; }
 }
 @media (max-width: 640px) {
@@ -974,9 +973,12 @@ p { line-height: 1.45; }
 }
 .section03-support-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
   margin-bottom: 24px;
+}
+.section03-support-row > :nth-child(3) {
+  grid-column: 1 / -1;
 }
 .section03-support-row .chart-card { padding: 22px; }
 @media (max-width: 860px) {
