@@ -775,6 +775,7 @@ p { line-height: 1.45; }
   .hero,
   .two-col,
   .feature-map,
+  .s02-masthead,
   .section-title,
   .section05-layout,
   .section03-main-row,
@@ -1341,4 +1342,50 @@ p { line-height: 1.45; }
   color: var(--ink);
   line-height: 1.45;
 }
+
+/* ── Section 02 masthead: title + filter unified header row ── */
+.s02-masthead {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  align-items: start;
+  gap: 32px;
+  border-top: 3px solid var(--ink);
+  padding-top: 20px;
+  margin: 72px 0 32px;
+}
+.s02-masthead-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.s02-masthead-left span {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--accent-dark);
+  font-weight: 800;
+  line-height: 1;
+}
+.s02-masthead-left h2 { margin: 0; }
+.s02-masthead-left p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 64ch;
+  font-size: .92rem;
+  line-height: 1.55;
+}
+.s02-filter-card {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f9f3ea;
+}
+.s02-filter-card .mini-kicker { margin: 0; }
+.s02-filter-card .state-filter-desc {
+  margin: 0;
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.s02-filter-card .state-filter-controls { flex-wrap: wrap; }
 
