@@ -163,12 +163,15 @@ function showProfileCard(regionName) {
       </div>
     </div>
   `;
-  card.classList.remove("hidden");
-  card.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 function hideProfileCard() {
   const card = document.getElementById("profile-card");
-  if (card) card.classList.add("hidden");
+  if (!card) return;
+  card.innerHTML = `<div class="profile-default-inner">
+    <p class="chart-kicker">How to read</p>
+    <p>Rows are high-risk SA2s, columns are risk components, and darker cells show stronger driver scores. Compare rows to see whether each place is driven mainly by exposure, housing, health, vulnerability, or adaptive capacity.</p>
+    <p class="profile-click-hint">Click any row to see that SA2\u2019s planning profile.</p>
+  </div>`;
 }
 

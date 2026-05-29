@@ -12,24 +12,26 @@
 <body>
   <main class="report-shell">
     <header class="hero panel">
-      <div class="hero-title">
-        <p class="eyebrow">FIT2179 DATA VISUALISATION 2</p>
-        <h1><span class="title-primary">Too Hot</span> <span class="title-secondary">to Handle</span></h1>
-        <h2 class="hero-subtitle">Mapping Heat, Housing<br />and Health Risk<br />in Australia</h2>
-      </div>
-      <div class="hero-copy">
-        <div class="hero-text">
-          <p class="hero-lead">Extreme heat is Australia's largest weather-related injury burden — but the risk is not shared equally.</p>
-          <p>Risk is highest where heat exposure overlaps with housing pressure, poorer health, older populations and socioeconomic disadvantage.</p>
+      <div class="hero-left">
+        <div class="hero-title">
+          <p class="eyebrow">FIT2179 DATA VISUALISATION 2</p>
+          <h1><span class="title-primary">Too Hot</span> <span class="title-secondary">to Handle</span></h1>
+          <h2 class="hero-subtitle">Mapping Heat, Housing<br />and Health Risk<br />in Australia</h2>
         </div>
-        <div class="hero-mini">
-          <p class="mini-kicker">RISK INDEX COMPONENTS</p>
-          <div class="mini-components" aria-label="Heat risk component summary">
-            <span class="mini-chip">Exposure</span>
-            <span class="mini-chip">Housing</span>
-            <span class="mini-chip">Health</span>
-            <span class="mini-chip">Vulnerability</span>
-            <span class="mini-chip">Adaptive Capacity</span>
+        <div class="hero-copy">
+          <div class="hero-text">
+            <p class="hero-lead">Extreme heat is Australia's largest weather-related injury burden — but the risk is not shared equally.</p>
+            <p>Risk is highest where heat exposure overlaps with housing pressure, poorer health, older populations and socioeconomic disadvantage.</p>
+          </div>
+          <div class="hero-mini">
+            <p class="mini-kicker">RISK INDEX COMPONENTS</p>
+            <div class="mini-components" aria-label="Heat risk component summary">
+              <span class="mini-chip">Exposure</span>
+              <span class="mini-chip">Housing</span>
+              <span class="mini-chip">Health</span>
+              <span class="mini-chip">Vulnerability</span>
+              <span class="mini-chip">Adaptive Capacity</span>
+            </div>
           </div>
         </div>
       </div>
@@ -57,23 +59,15 @@
       </div>
       <p class="section-title-intro">National injury data shows why extreme heat is the starting point before mapping where heat-health risk is highest.</p>
     </section>
-    <section class="grid section01-grid">
-      <div class="section01-toprow">
-        <aside class="panel section01-keyfindings">
-          <p class="chart-kicker">Key finding</p>
-          <h3>Heat is the dominant weather-health burden</h3>
-          <p>Extreme heat records 7,104 injury hospitalisations — far above bushfire, cold, rain and storms combined.</p>
-          <p>Several years exceed 1,000 cases, confirming this is a recurring and serious health burden.</p>
-        </aside>
-        <article class="panel chart-card section01-bar">
-          <div class="chart-heading">
-            <p class="chart-kicker">National burden</p>
-            <h3>Extreme heat causes more injury hospitalisations than all other listed hazards combined.</h3>
-          </div>
-          <div id="weather_event_bar" class="chart"></div>
-        </article>
-      </div>
-      <div class="section01-secondary">
+    <section class="section01-layout">
+      <article class="panel chart-card section01-bar">
+        <div class="chart-heading">
+          <p class="chart-kicker">National burden</p>
+          <h3>Extreme heat causes more injury hospitalisations than all other listed hazards combined.</h3>
+        </div>
+        <div id="weather_event_bar" class="chart"></div>
+      </article>
+      <div class="section01-right-stack">
         <article class="panel chart-card section01-line">
           <div class="chart-heading">
             <p class="chart-kicker">Time pattern</p>
@@ -139,12 +133,6 @@
       <aside class="panel explainer-card">
         <h3>How to read this map</h3>
         <p class="map-how-to">Darker SA2s have higher relative HHRI. Grey areas are excluded — they have no resident population or sit outside the mainland analysis scope.</p>
-        <p class="mini-kicker">WHAT HHRI CAPTURES</p>
-        <ul class="map-legend-list">
-          <li><strong>Exposure</strong> — local heat and environmental pressure</li>
-          <li><strong>Vulnerability</strong> — housing, health and social disadvantage</li>
-          <li><strong>Adaptive capacity</strong> — support access and local resilience</li>
-        </ul>
         <p class="mini-kicker">WHERE TO LOOK</p>
         <ul class="map-legend-list">
           <li><strong>Northern Australia</strong> — high exposure + vulnerability</li>
@@ -200,15 +188,24 @@
     </div>
 
     <p class="section03-claim">The highest-risk SA2s are not just hotter — they are places where heat overlaps with social and health vulnerability.</p>
-    <article class="panel chart-card section03-hero-card">
-      <div class="chart-heading">
-        <p class="chart-kicker">Primary driver</p>
-        <h3>Exposure becomes more serious when vulnerability is high</h3>
-        <p>Each dot is one SA2. Colour shows HHRI. Shaded zones mark four quadrant types. Use the dropdown to filter by state.</p>
-      </div>
-      <div id="scatter_exposure_vulnerability" class="chart"></div>
-      <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
-    </article>
+    <div class="driver-main">
+      <article class="panel chart-card section03-hero-card">
+        <div class="chart-heading">
+          <p class="chart-kicker">Primary driver</p>
+          <h3>Exposure becomes more serious when vulnerability is high</h3>
+          <p>Each dot is one SA2. Colour shows HHRI. Shaded zones mark four quadrant types. Use the state filter above to highlight one state.</p>
+        </div>
+        <div id="scatter_exposure_vulnerability" class="chart"></div>
+        <p class="chart-note">Takeaway: The most concerning SA2s combine high exposure with high vulnerability. Neither dimension alone explains the highest HHRI scores.</p>
+      </article>
+      <aside class="panel section03-explain-card">
+        <p class="chart-kicker">How to read</p>
+        <p>Each dot is one SA2. The x-axis shows heat and environmental exposure; the y-axis shows social and health vulnerability. Colour shows HHRI &mdash; darker red means higher compound risk.</p>
+        <p>SA2s in the <strong>top-right quadrant</strong> combine both pressures and carry the highest compound risk. SA2s in the top-left are vulnerable but less exposed; bottom-right are exposed but less vulnerable.</p>
+        <p class="chart-kicker" style="margin-top:14px">State filter</p>
+        <p>Use the filter bar above to highlight SA2s from a single state across all linked charts simultaneously.</p>
+      </aside>
+    </div>
     <div class="section03-support-row">
       <article class="panel chart-card">
         <div class="chart-heading">
@@ -248,6 +245,9 @@
       <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">What drives each state’s risk?</p><h3>NT and WA risk profiles are driven more strongly by exposure</h3><p>Normalised bars show relative component contribution, not total HHRI.</p></div><div id="state_components" class="chart"></div><p class="chart-note">Takeaway: The Northern Territory records the highest relative exposure component of any state or territory. NSW and Victoria show more balanced mixes — targeted responses will need to differ by region.</p></article>
       <article class="panel chart-card"><div class="chart-heading"><p class="chart-kicker">How much do areas vary within each state?</p><h3>State averages hide large local differences</h3><p>Box plots show HHRI scores across SA2s within each state. A wide box means SA2s within that state differ strongly from each other.</p></div><div id="boxplot_state" class="chart"></div><p class="chart-note">Takeaway: State-level averages can hide sharp local differences. This is why SA2-level mapping remains essential for identifying where heat-health risk is concentrated.</p></article>
     </section>
+    <div class="panel interpretation-strip">
+      <p>NT and WA show the highest relative exposure component, meaning environmental heat pressure is the primary driver in those regions. NSW and Victoria show more balanced profiles — different states need different responses. Within each state, wide HHRI variation confirms that SA2-level data always matters more than state averages.</p>
+    </div>
 
     <p class="section-bridge">State and component analysis reveals the structure of risk. The final section focuses on the highest-risk SA2s to show what drives their scores — and what types of response each may need.</p>
 
@@ -258,50 +258,39 @@
       <p class="section-title-intro">High-risk SA2s are driven by different combinations of pressure — which means one national solution cannot address all of them.</p>
     </section>
 
-    <article class="panel chart-card section05-full-chart">
-      <div class="chart-heading">
-        <p class="chart-kicker">Final synthesis</p>
-        <h3>The highest-risk SA2s are driven by different combinations of pressure</h3>
-        <p>Each row is a high-risk SA2 and each column is a risk component. Darker cells indicate stronger component scores. <strong>Click any row to see that SA2&#8217;s planning profile below.</strong></p>
-      </div>
-      <div id="heatmap_top_components" class="chart"></div>
-    </article>
-
-    <div id="profile-card" class="profile-card hidden" aria-live="polite" role="region" aria-label="SA2 planning profile"></div>
-
-    <div class="grid two-col section05-interpretation">
-      <div class="panel section05-look-panel">
-        <h3>How to read this chart</h3>
-        <p>Rows are high-risk SA2s, columns are risk components, and darker cells show stronger driver scores. Compare rows to see whether each place is driven mainly by exposure, housing, health, vulnerability, or adaptive capacity.</p>
-      </div>
-      <div class="panel section05-meaning-panel">
-        <h3>What this means for planning</h3>
-        <p>Heat-health risk is not just a climate issue — it is also a housing, health, and social vulnerability issue. Each high-risk SA2 has a different dominant pressure, which means each needs a different response.</p>
-        <p class="section05-insight"><strong>Final insight:</strong> The highest-risk SA2s need targeted local responses, not one national solution.</p>
-        <p class="section05-look-label">Response types by dominant driver</p>
-        <div class="response-cards">
-          <div class="response-card">
-            <span class="response-type chip-exposure">High exposure</span>
-            <p>Cooling infrastructure, heat alerts and shade programs</p>
-          </div>
-          <div class="response-card">
-            <span class="response-type chip-housing">High housing pressure</span>
-            <p>Rental and home cooling support initiatives</p>
-          </div>
-          <div class="response-card">
-            <span class="response-type chip-health">High health vulnerability</span>
-            <p>Targeted health outreach and emergency planning</p>
-          </div>
+    <div class="final-layout">
+      <article class="panel chart-card section05-full-chart">
+        <div class="chart-heading">
+          <p class="chart-kicker">Final synthesis</p>
+          <h3>The highest-risk SA2s are driven by different combinations of pressure</h3>
+          <p>Each row is a high-risk SA2 and each column is a risk component. Darker cells indicate stronger component scores. <strong>Click any row to see that SA2&#8217;s planning profile.</strong></p>
         </div>
-        <table class="response-table">
-          <thead><tr><th>If the driver is…</th><th>Response should focus on…</th></tr></thead>
-          <tbody>
-            <tr><td>High exposure</td><td>Shade infrastructure, cooling centres, heat alerts</td></tr>
-            <tr><td>Housing pressure</td><td>Rental cooling support, housing upgrades</td></tr>
-            <tr><td>Health vulnerability</td><td>Outreach to older and medically vulnerable residents</td></tr>
-            <tr><td>Low adaptive capacity</td><td>Transport access, local emergency support networks</td></tr>
-          </tbody>
-        </table>
+        <div id="heatmap_top_components" class="chart"></div>
+      </article>
+      <div id="profile-card" class="profile-card" aria-live="polite" role="region" aria-label="SA2 planning profile">
+        <div class="profile-default-inner">
+          <p class="chart-kicker">How to read</p>
+          <p>Rows are high-risk SA2s, columns are risk components, and darker cells show stronger driver scores. Compare rows to see whether each place is driven mainly by exposure, housing, health, vulnerability, or adaptive capacity.</p>
+          <p class="profile-click-hint">Click any row to see that SA2&#8217;s planning profile.</p>
+        </div>
+      </div>
+    </div>
+    <div class="response-grid">
+      <div class="panel response-grid-card">
+        <span class="response-type chip-exposure">High exposure</span>
+        <p>Cooling centres, shade infrastructure and heat alerts</p>
+      </div>
+      <div class="panel response-grid-card">
+        <span class="response-type chip-housing">Housing pressure</span>
+        <p>Rental cooling support and home upgrade programs</p>
+      </div>
+      <div class="panel response-grid-card">
+        <span class="response-type chip-health">Health vulnerability</span>
+        <p>Outreach to older and medically vulnerable residents</p>
+      </div>
+      <div class="panel response-grid-card">
+        <span class="response-type chip-seifa">Low adaptive capacity</span>
+        <p>Transport access and local emergency support networks</p>
       </div>
     </div>
 
