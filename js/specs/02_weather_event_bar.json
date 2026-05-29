@@ -63,7 +63,7 @@
           }
         },
         "tooltip": [
-          "weather_event",
+          { "field": "weather_event", "title": "Event type" },
           {
             "field": "hosp",
             "format": ",d",

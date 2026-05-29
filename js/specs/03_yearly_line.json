@@ -61,8 +61,7 @@
         "dy": -10,
         "fontSize": 10,
         "fontWeight": 700,
-        "color": "#6b5f55",
-        "background": "#f8efe3"
+        "color": "#6b5f55"
       },
       "encoding": {
         "x": {
@@ -97,7 +96,7 @@
           "scale": { "domain": [0, 1250] }
         },
         "tooltip": [
-          "period",
+          { "field": "period", "title": "Financial year" },
           {
             "field": "hosp",
             "format": ",d",
@@ -168,8 +167,7 @@
         "baseline": "bottom",
         "fontSize": 11,
         "fontWeight": 700,
-        "color": "#7c2d12",
-        "background": "#f8efe3"
+        "color": "#7c2d12"
       },
       "encoding": {
         "x": {
