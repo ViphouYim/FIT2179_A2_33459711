@@ -973,12 +973,9 @@ p { line-height: 1.45; }
 }
 .section03-support-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 22px;
   margin-bottom: 24px;
-}
-.section03-support-row > :nth-child(3) {
-  grid-column: 1 / -1;
 }
 .section03-support-row .chart-card { padding: 22px; }
 @media (max-width: 860px) {
