@@ -633,9 +633,11 @@ p { line-height: 1.45; }
 }
 
 .map-chart { min-height: 640px; }
-.explainer-card { padding: 18px; background: #fff3d6; }
+.explainer-card { padding: 28px; background: #fff3d6; display: flex; flex-direction: column; gap: 12px; }
+.explainer-card h3 { margin: 0; }
 .explainer-card p, .explainer-card li { color: var(--muted); }
-.explainer-card ul { padding-left: 20px; }
+.explainer-card ul { padding-left: 20px; margin: 0; }
+.explainer-card .mini-kicker { margin-top: 4px; }
 .mini-map {
   min-height: 150px;
   margin: 8px 0 10px;
@@ -959,7 +961,7 @@ p { line-height: 1.45; }
 
 /* ── Section 02 map explainer (simplified) ── */
 .map-how-to {
-  margin: 0 0 14px;
+  margin: 0;
   font-size: .88rem;
   color: var(--muted);
   line-height: 1.5;
