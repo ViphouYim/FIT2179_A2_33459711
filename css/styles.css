@@ -1711,6 +1711,20 @@ a.hero-section-item:hover > span:last-child {
   align-items: start;
 }
 .s05-comp-row:last-child { border-bottom: none; }
+.s05-stat-strip { display: flex; flex-direction: column; gap: 8px; }
+.s05-stat-item { display: flex; flex-direction: column; gap: 2px; }
+.s05-stat-num {
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: #9b2f14;
+  line-height: 1;
+}
+.s05-stat-label {
+  font-size: .72rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
 .s05-comp-row strong {
   font-size: .74rem;
   font-weight: 800;
