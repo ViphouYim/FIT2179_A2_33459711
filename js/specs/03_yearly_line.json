@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 250,
+  "height": 100,
   "data": {
     "url": "data/section01_health_aihw_from_workbook.csv"
   },
