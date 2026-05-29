@@ -72,8 +72,8 @@
           "field": "pop", "type": "quantitative",
           "scale": { "range": [15, 700], "type": "sqrt" },
           "legend": {
-            "title": "Population", "orient": "bottom",
-            "direction": "horizontal", "symbolFillColor": "#999",
+            "title": "Population", "orient": "right",
+            "direction": "vertical", "symbolFillColor": "#999",
             "values": [5000, 10000, 20000],
             "symbolLimit": 3
           }
@@ -85,8 +85,8 @@
             "range": ["#f6e8c3", "#f28e2b", "#7f0000"]
           },
           "legend": {
-            "title": "HHRI risk band", "orient": "bottom",
-            "direction": "horizontal"
+            "title": "HHRI risk band", "orient": "right",
+            "direction": "vertical"
           }
         },
         "tooltip": [
