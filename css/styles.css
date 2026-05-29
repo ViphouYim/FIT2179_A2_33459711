@@ -1582,9 +1582,8 @@ a.hero-section-item:hover > span:last-child {
   grid-template-columns: 80px 1fr;
   gap: 22px;
   align-items: start;
-  padding-top: 48px;
-  border-top: 3px solid var(--ink);
-  margin: 72px 0 28px;
+  padding-top: 0;
+  margin: 48px 0 28px;
 }
 .s05-num {
   font-size: 80px;
